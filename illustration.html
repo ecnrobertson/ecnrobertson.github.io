@@ -82,15 +82,22 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
-    .gallery {
+    .gallery-published {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
-      margin-top: 1rem;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 8px;
+    }
+    
+    .gallery-ongoing {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    
+    .gallery-portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
     }
 
     .gallery-item {
@@ -183,7 +190,7 @@
           </p>
           <a class="button-link" href="https://doi.org/your-paper-link" target="_blank">View Publication</a>
 
-          <div class="gallery"> <!-- This starts the side by side of the two figures -->
+          <div class="gallery-published"> <!-- This starts the side by side of the two figures -->
 
             <div class="gallery-item"> <!-- This starts the first figure box -->
               <a href="images/Published_Works/CH1_CF_V4_revision.png" target="_blank">
@@ -228,7 +235,7 @@
           </p>
           <a class="button-link" href="https://doi.org/your-paper-link" target="_blank">View Publication</a>
 
-          <div class="gallery"> <!-- This starts the side by side of the two figures -->
+          <div class="gallery-ongoing"> <!-- This starts the side by side of the two figures -->
 
             <div class="gallery-item"> <!-- This starts the first figure box -->
               <a href="images/Ongoing_Projects/FIG1_SSA_main_figure_full_text_consbio.png" target="_blank">
@@ -255,7 +262,7 @@
         ecology, and the natural world.
       </p>
 
-      <div class="gallery">
+      <div class="gallery-portfolio">
         <div class="gallery-item">
           <a href="images/Digital_Drawing/BANS.png" target="_blank">
           <img src="images/Digital_Drawing/BANS.png" alt="Bank Swallow" />
