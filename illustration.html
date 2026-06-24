@@ -1,502 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Art & Visualization</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art &amp; Visualization | Erica Robertson</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
 
-    <style>
-      :root {
-        --bg: #f7f7f5;
-      --text: #343016;
-      --accent: #656839;
-      --accent-light: #CBC9AD;
-      --card: #CBC9AD;
-      --border: #656839;
-      }
-      
-      * {
-        box-sizing: border-box;
-      }
+  <header class="site-header">
+    <p class="eyebrow">PhD Candidate · Ecology</p>
+    <h1>Scientific Illustration</h1>
+    <p>Art &middot; Observation &middot; Visual Science Communication</p>
+  </header>
 
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="illustration.html" class="is-active">Art &amp; Visualization</a></li>
+    </ul>
+  </nav>
 
-      header {
-        background: var(--accent);
-        color: white;
-        padding: 3rem 1.5rem;
-        text-align: center;
-      }
+  <main>
 
-      nav {
-        background: white;
-        border-bottom: 1px solid var(--border);
-        padding: 0.9rem 1rem;
-        position: sticky;
-        top: 0;
-      }
+    <section class="intro">
+      <h2>Illustration and Visual Communication</h2>
+      <p>
+        Alongside my research, I am interested in scientific illustration, figure design,
+        and nature journaling as ways of observing and communicating ecological ideas. My
+        work includes both published figures created in support of scientific projects and
+        independent creative work centered on birds, landscapes, and natural history.
+      </p>
+    </section>
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        padding: 0;
-        margin: 0;
-        flex-wrap: wrap;
-      }
+    <!-- ===== Published Works ===== -->
+    <section>
+      <p class="eyebrow-label">Fig. 1</p>
+      <h2 class="section-heading">Published Works</h2>
 
-      nav a {
-        text-decoration: none;
-        color: var(--accent);
-        font-weight: bold;
-      }
-
-      main {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2rem 1.25rem 4rem;
-      }
-
-      section {
-        margin-bottom: 3rem;
-      }
-
-      .intro {
-        background: var(--accent-light);
-        border-radius: 14px;
-        padding: 1.5rem 2rem;
-      }
-
-      .project-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 1.25rem;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      }
-
-      .gallery-published {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
-      }
-
-      .gallery-ongoing {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
-      }
-
-      .gallery-portfolio {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.25rem;
-      }
-
-      .gallery-item,
-      .gallery-item-portfolio {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 0.75rem;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      }
-
-      .gallery-item img,
-      .gallery-item-portfolio img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 8px;
-        display: block;
-        margin-bottom: 0.75rem;
-      }
-
-      .gallery-item-portfolio img {
-        cursor: pointer;
-        transition: transform 0.2s ease;
-      }
-
-      .gallery-item-portfolio img:hover {
-        transform: scale(1.03);
-      }
-
-      .gallery-item p,
-      .gallery-item-portfolio p {
-        margin: 0;
-        font-size: 0.95rem;
-      }
-
-      .portfolio-subsection {
-        margin-top: 2rem;
-      }
-
-      .portfolio-subsection h3 {
-        margin-bottom: 0.75rem;
-      }
-
-      a.button-link {
-        display: inline-block;
-        margin-top: 0.75rem;
-        color: white;
-        background: var(--accent);
-        padding: 0.6rem 1rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      footer {
-        text-align: center;
-        padding: 1.5rem;
-        color: #666;
-        border-top: 1px solid var(--border);
-        background: #fafaf8;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Header -->
-    <header>
-      <h1>Scientific Illustration</h1>
-      <p>Art • Observation • Visual Science Communication</p>
-    </header>
-
-    <!-- Site navigation -->
-    <nav>
-      <ul>
-        <li><a href="index.html">About</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="illustration.html">Art & Visualization</a></li>
-      </ul>
-    </nav>
-
-    <main>
-      <!-- Intro section -->
-      <section class="intro">
-        <h2>Illustration and Visual Communication</h2>
+      <div class="project-card">
+        <h3>
+          The Genetic and Morphological Basis of Local Adaptation to Elevational Extremes
+          in an Alpine Finch
+        </h3>
         <p>
-          Alongside my research, I am interested in scientific illustration,
-          figure design, and nature journaling as ways of observing and
-          communicating ecological ideas. My work includes both published
-          figures created in support of scientific projects and independent
-          creative work centered on birds, landscapes, and natural history.
+          Alpine systems are experiencing rapid environmental change, making it increasingly
+          important to understand local adaptation for conservation, particularly in
+          high-elevation species like the Sierra Nevada Gray-crowned Rosy-Finch. By
+          integrating morphological and genomic analyses, this study found that temperature,
+          food availability, and alpine landscape features impose complex and sometimes
+          conflicting selective pressures on traits linked to thermoregulation and altitude
+          adaptation. As first author on this paper, I drew all illustrations and created
+          all figures.
         </p>
-      </section>
+        <a class="button-link" href="https://doi.org/10.1002/ece3.72962" target="_blank" rel="noopener">
+          View Publication
+        </a>
 
-      <!-- Published works -->
-      <section>
-        <h2>Published Works</h2>
+        <div class="gallery-published">
+          <div class="gallery-item">
+            <a href="images/Published_Works/CH1_CF_V4_revision.png" target="_blank" rel="noopener">
+              <img src="images/Published_Works/CH1_CF_V4_revision.png"
+                   alt="Conceptual figure outlining sampling scheme and general methodology" />
+            </a>
+            <p>Figure 1. Conceptual figure outlining sampling scheme and general methodology.</p>
+          </div>
 
-        <!-- Project 1 -->
-        <div class="project-card">
-          <h3>
-            The Genetic and Morphological Basis of Local Adaptation to
-            Elevational Extremes in an Alpine Finch
-          </h3>
+          <div class="gallery-item">
+            <a href="images/Published_Works/GWAS_Fig2_final.png" target="_blank" rel="noopener">
+              <img src="images/Published_Works/GWAS_Fig2_final.png"
+                   alt="Results on morphological comparison for beak morphology" />
+            </a>
+            <p>Figure 2. Results on morphological comparison for beak morphology. All of these
+               traits were significantly different between populations, suggesting local
+               adaptation.</p>
+          </div>
 
-          <p>
-            Alpine systems are experiencing rapid environmental change, making it increasingly important to understand local adaptation for conservation, particularly in high-elevation species like the Sierra Nevada Gray-crowned Rosy-Finch. By integrating morphological and genomic analyses, this study found that temperature, food availability, and alpine landscape features impose complex and sometimes conflicting selective pressures on traits linked to thermoregulation and altitude adaptation. As first author on this paper, I drew all illustrations and created all figures.
-          </p>
+          <div class="gallery-item">
+            <a href="images/Published_Works/GWAS_fig3b_final.png" target="_blank" rel="noopener">
+              <img src="images/Published_Works/GWAS_fig3b_final.png"
+                   alt="Depiction of feather traits measured and comparison results" />
+            </a>
+            <p>Figure 3. Depiction of the feather traits measured and the results of our
+               comparison. We found that only plumulaceous barbule node density was
+               different between populations.</p>
+          </div>
 
-          <a
-            class="button-link"
-            href="https://doi.org/10.1002/ece3.72962"
-            target="_blank"
-          >
-            View Publication
-          </a>
-
-          <div class="gallery-published">
-            <div class="gallery-item">
-              <a
-                href="images/Published_Works/CH1_CF_V4_revision.png"
-                target="_blank"
-              >
-                <img
-                  src="images/Published_Works/CH1_CF_V4_revision.png"
-                  alt="Conceptual figure outlining sampling scheme and general methodology"
-                />
-              </a>
-              <p>
-                Figure 1. Conceptual figure outlining sampling scheme and
-                general methodology.
-              </p>
-            </div>
-
-            <div class="gallery-item">
-              <a
-                href="images/Published_Works/GWAS_Fig2_final.png"
-                target="_blank"
-              >
-                <img
-                  src="images/Published_Works/GWAS_Fig2_final.png"
-                  alt="Results on morphological comparison for beak morphology"
-                />
-              </a>
-              <p>
-                Figure 2. Results on morphological comparison for beak
-                morphology. All of these traits were significantly different
-                between populations, suggesting local adaptation.
-              </p>
-            </div>
-
-            <div class="gallery-item">
-              <a
-                href="images/Published_Works/GWAS_fig3b_final.png"
-                target="_blank"
-              >
-                <img
-                  src="images/Published_Works/GWAS_fig3b_final.png"
-                  alt="Depiction of feather traits measured and comparison results"
-                />
-              </a>
-              <p>
-                Figure 3. Depiction of the feather traits measured and the
-                results of our comparison. We found that only plumulaceous
-                barbule node density was different between populations.
-              </p>
-            </div>
-
-            <div class="gallery-item">
-              <a
-                href="images/Published_Works/Manhattan_plots_Clean_final.png"
-                target="_blank"
-              >
-                <img
-                  src="images/Published_Works/Manhattan_plots_Clean_final.png"
-                  alt="Manhattan plot depicting results of the LMM, BSLMM, and FST analysis"
-                />
-              </a>
-              <p>
-                Figure 4. Manhattan plot depicting the results of the LMM,
-                BSLMM, and FST analysis.
-              </p>
-            </div>
+          <div class="gallery-item">
+            <a href="images/Published_Works/Manhattan_plots_Clean_final.png" target="_blank" rel="noopener">
+              <img src="images/Published_Works/Manhattan_plots_Clean_final.png"
+                   alt="Manhattan plot depicting results of the LMM, BSLMM, and FST analysis" />
+            </a>
+            <p>Figure 4. Manhattan plot depicting the results of the LMM, BSLMM, and FST
+               analysis.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Ongoing projects -->
-      <section>
-        <h2>Ongoing Projects</h2>
+    <!-- ===== Ongoing Projects ===== -->
+    <section>
+      <p class="eyebrow-label">Fig. 2</p>
+      <h2 class="section-heading">Ongoing Projects</h2>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <h3>
-            A widespread gap in U.S. Endangered Species Act implementation: Risk
-            of genetic erosion within populations
-          </h3>
-
-          <p>
-            We apply indicators of intraspecific genetic diversity as adopted by
-            the Convention on Biological Diversity to 161 species assessed for
-            classification under the U.S. Endangered Species Act (ESA). In
-            addition to contributions to data analysis and writing, I
-            illustrated all animals and developed all figures for this paper.
-          </p>
-
-          <a
-            class="button-link"
-            href="https://doi.org/10.32942/X2KX06"
-            target="_blank"
-          >
-            View Publication
-          </a>
-
-          <div class="gallery-ongoing">
-            <div class="gallery-item">
-              <a
-                href="images/Ongoing_Projects/FIG1_SSA_main_figure_full_text_consbio.png"
-                target="_blank"
-              >
-                <img
-                  src="images/Ongoing_Projects/FIG1_SSA_main_figure_full_text_consbio.png"
-                  alt="Genetic indicators by ESA classification status and taxonomic group"
-                />
-              </a>
-              <p>
-                Figure 1. Genetic indicators by ESA classification status and
-                taxonomic group.
-              </p>
-            </div>
-
-            <div class="gallery-item">
-              <a
-                href="images/Ongoing_Projects/FIG2_GI_Conceptual_Fig_consbio.png"
-                target="_blank"
-              >
-                <img
-                  src="images/Ongoing_Projects/FIG2_GI_Conceptual_Fig_consbio.png"
-                  alt="Conceptual summary figure for genetic indicators paper"
-                />
-              </a>
-              <p>
-                Figure 2. Summary of the need, effort, benefit, key results,
-                and takeaway of evaluating the 459 genetic indicators in
-                at-risk species assessed under the ESA using the SSA framework.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Portfolio -->
-      <section>
-        <h2>Portfolio</h2>
+      <div class="project-card">
+        <h3>
+          A widespread gap in U.S. Endangered Species Act implementation: Risk of genetic
+          erosion within populations
+        </h3>
         <p>
-          A selection of independent creative work, including nature
-          journaling, observational sketches, and other illustrations inspired
-          by birds, ecology, and the natural world.
-          
-          If you're interested in commissioning illustrations of figures for a 
-          publication or project please email me!
+          We apply indicators of intraspecific genetic diversity as adopted by the
+          Convention on Biological Diversity to 161 species assessed for classification
+          under the U.S. Endangered Species Act (ESA). In addition to contributions to data
+          analysis and writing, I illustrated all animals and developed all figures for
+          this paper.
         </p>
+        <a class="button-link" href="https://doi.org/10.32942/X2KX06" target="_blank" rel="noopener">
+          View Publication
+        </a>
 
-        <!-- Scientific illustration -->
-        <div class="portfolio-subsection">
-          <h3>Scientific Illustration</h3>
-          <div class="gallery-portfolio">
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/BANS.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/BANS.png"
-                  alt="Bank Swallow"
-                />
-              </a>
-              <p>Bank Swallow</p>
-            </div>
+        <div class="gallery-ongoing">
+          <div class="gallery-item">
+            <a href="images/Ongoing_Projects/FIG1_SSA_main_figure_full_text_consbio.png" target="_blank" rel="noopener">
+              <img src="images/Ongoing_Projects/FIG1_SSA_main_figure_full_text_consbio.png"
+                   alt="Genetic indicators by ESA classification status and taxonomic group" />
+            </a>
+            <p>Figure 1. Genetic indicators by ESA classification status and taxonomic group.</p>
+          </div>
 
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/BCRF.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/BCRF.png"
-                  alt="Brown-capped Rosy Finch"
-                />
-              </a>
-              <p>Brown-capped Rosy Finch</p>
-            </div>
-
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/YEWA.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/YEWA.png"
-                  alt="Yellow Warbler"
-                />
-              </a>
-              <p>Yellow Warbler</p>
-            </div>
-
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/BCVI.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/BCVI.png"
-                  alt="Black-capped Vireo"
-                />
-              </a>
-              <p>Black-capped Vireo</p>
-            </div>
-            
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/Brook_Floater.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/Brook_Floater.png"
-                  alt="Brook Floater"
-                />
-              </a>
-              <p>Brook Floater</p>
-            </div>
-            
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/Fenders_blue.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/Fenders_blue.png"
-                  alt="Fender's Blue Butterfly"
-                />
-              </a>
-              <p>Fender's Blue Butterfly</p>
-            </div>
-            
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/Georgia_Bully.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/Georgia_Bully.png"
-                  alt="Georgia Bully"
-                />
-              </a>
-              <p>Georgia Bully</p>
-            </div>
-            
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/Purple_Lilliput.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/Purple_Lilliput.png"
-                  alt="Purple Lilliput"
-                />
-              </a>
-              <p>Purple Lilliput</p>
-            </div>
-            
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/Southern_Hognose.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/Southern_Hognose.png"
-                  alt="Southern Hognose"
-                />
-              </a>
-              <p>Southern Hognose</p>
-            </div>
-            
-            <div class="gallery-item-portfolio">
-              <a href="images/Portfolio/Scientific_Illustration/COYE.png" target="_blank">
-                <img
-                  src="images/Portfolio/Scientific_Illustration/COYE.png"
-                  alt="Common Yellowthroat"
-                />
-              </a>
-              <p>Common Yellowthroat</p>
-            </div>
-            
+          <div class="gallery-item">
+            <a href="images/Ongoing_Projects/FIG2_GI_Conceptual_Fig_consbio.png" target="_blank" rel="noopener">
+              <img src="images/Ongoing_Projects/FIG2_GI_Conceptual_Fig_consbio.png"
+                   alt="Conceptual summary figure for genetic indicators paper" />
+            </a>
+            <p>Figure 2. Summary of the need, effort, benefit, key results, and takeaway of
+               evaluating the 459 genetic indicators in at-risk species assessed under the
+               ESA using the SSA framework.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Nature journaling -->
-        <div class="portfolio-subsection">
-          <h3>Nature Journaling</h3>
-          <div class="gallery-portfolio">
-            <!-- Add nature journaling pieces here -->
-            <!-- Example item:
-            <div class="gallery-item-portfolio">
-              <a href="images/Nature_Journaling/journal_01.jpg" target="_blank">
-                <img src="images/Nature_Journaling/journal_01.jpg" alt="Nature journal page" />
-              </a>
-              <p>Journal page title</p>
-            </div>
-            -->
+    <!-- ===== Portfolio ===== -->
+    <section>
+      <p class="eyebrow-label">Fig. 3</p>
+      <h2 class="section-heading">Portfolio</h2>
+      <p>
+        A selection of independent creative work, including nature journaling, observational
+        sketches, and other illustrations inspired by birds, ecology, and the natural world.
+        If you're interested in commissioning illustrations or figures for a publication or
+        project, please email me!
+      </p>
+
+      <div class="portfolio-subsection">
+        <h3>Scientific Illustration</h3>
+        <div class="gallery-portfolio">
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/BANS.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/BANS.png" alt="Bank Swallow" />
+            </a>
+            <p>Bank Swallow</p>
           </div>
-        </div>
 
-        <!-- General art -->
-        <div class="portfolio-subsection">
-          <h3>General Art</h3>
-          <div class="gallery-portfolio">
-            <!-- Add general art pieces here -->
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/BCRF.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/BCRF.png" alt="Brown-capped Rosy Finch" />
+            </a>
+            <p>Brown-capped Rosy Finch</p>
           </div>
-        </div>
-      </section>
-    </main>
 
-    <footer>
-      <p>© 2026 Erica C.N. Robertson</p>
-    </footer>
-  </body>
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/YEWA.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/YEWA.png" alt="Yellow Warbler" />
+            </a>
+            <p>Yellow Warbler</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/BCVI.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/BCVI.png" alt="Black-capped Vireo" />
+            </a>
+            <p>Black-capped Vireo</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/Brook_Floater.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/Brook_Floater.png" alt="Brook Floater" />
+            </a>
+            <p>Brook Floater</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/Fenders_blue.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/Fenders_blue.png" alt="Fender's Blue Butterfly" />
+            </a>
+            <p>Fender's Blue Butterfly</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/Georgia_Bully.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/Georgia_Bully.png" alt="Georgia Bully" />
+            </a>
+            <p>Georgia Bully</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/Purple_Lilliput.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/Purple_Lilliput.png" alt="Purple Lilliput" />
+            </a>
+            <p>Purple Lilliput</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/Southern_Hognose.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/Southern_Hognose.png" alt="Southern Hognose" />
+            </a>
+            <p>Southern Hognose</p>
+          </div>
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Portfolio/Scientific_Illustration/COYE.png" target="_blank" rel="noopener">
+              <img src="images/Portfolio/Scientific_Illustration/COYE.png" alt="Common Yellowthroat" />
+            </a>
+            <p>Common Yellowthroat</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="portfolio-subsection">
+        <h3>Nature Journaling</h3>
+        <div class="gallery-portfolio">
+          <!-- Add nature journaling pieces here. Copy a block like this one
+               and update the file path, alt text, and caption:
+
+          <div class="gallery-item-portfolio">
+            <a href="images/Nature_Journaling/journal_01.jpg" target="_blank" rel="noopener">
+              <img src="images/Nature_Journaling/journal_01.jpg" alt="Nature journal page" />
+            </a>
+            <p>Journal page title</p>
+          </div>
+          -->
+        </div>
+      </div>
+
+      <div class="portfolio-subsection">
+        <h3>General Art</h3>
+        <div class="gallery-portfolio">
+          <!-- Add general art pieces here -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Erica C.N. Robertson</p>
+  </footer>
+
+</body>
 </html>

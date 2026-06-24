@@ -4,172 +4,92 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Erica C.N. Robertson</title>
-  <style>
-    :root {
-      --bg: #FFF3B0;
-      --text: #1D343B;
-      --accent: #540B0E;
-      --accent-light: #E09F3E;
-      --card: #9E2A2B;
-      --border: #335C67;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
+  <!-- This line connects the page to our shared stylesheet.
+       Every page in the site links to the same style.css file,
+       so changing one file updates the look everywhere. -->
+  <link rel="stylesheet" href="style.css" />
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--accent);
-      color: white;
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0 0 0.5rem;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin: 0;
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
-
-    nav {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 0.9rem 1rem;
-      position: sticky;
-      top: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    .hero {
-      background: var(--accent-light);
-      border-radius: 14px;
-      padding: 2rem;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 1rem;
-      background: var(--accent);
-      color: white;
-      padding: 0.75rem 1.1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 0.75rem;
-    }
-
-    .links ul {
-      padding-left: 1.25rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #666;
-      border-top: 1px solid var(--border);
-      background: #fafaf8;
-    }
-  </style>
+  <!-- Google Fonts: loads the two typefaces used across the site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-  <header>
+
+  <header class="site-header">
+    <p class="eyebrow">PhD Candidate · Ecology</p>
     <h1>Erica C.N. Robertson</h1>
-    <p>Conservation Genomics • Ecology • Research • Art</p>
+    <p>Conservation Genomics &middot; Ecology &middot; Research &middot; Art</p>
   </header>
 
-  <nav>
+  <!-- The nav is repeated on every page. The "is-active" class
+       marks which page we're currently on, underlining it. -->
+  <nav class="site-nav">
     <ul>
-      <li><a href="index.html">About</a></li>
+      <li><a href="index.html" class="is-active">About</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="illustration.html">Art & Visualization</a></li>
+      <li><a href="illustration.html">Art &amp; Visualization</a></li>
     </ul>
   </nav>
 
   <main>
+
     <section class="hero">
       <h2>Welcome</h2>
       <p>
-        I am a PhD candidate in Ecology at Colorado State University studying conservation genomics,
-        avian ecology, and how evolutionary and environmental processes shape biodiversity across landscapes.
+        I am a PhD candidate in Ecology at Colorado State University studying conservation
+        genomics, avian ecology, and how evolutionary and environmental processes shape
+        biodiversity across landscapes.
       </p>
       <a class="button" href="research.html">View Research</a>
-      <a class="button" href="illustration.html">View Art & Visualization</a>
+      <a class="button" href="illustration.html">View Art &amp; Visualization</a>
     </section>
 
     <section id="about">
-      <h2>About</h2>
+      <p class="eyebrow-label">Field Notes</p>
+      <h2 class="section-heading">About</h2>
       <p>
-        I am a PhD candidate in Ecology at Colorado State University studying conservation genomics
-        and avian ecology. My research focuses on how populations adapt to environmental change and
-        how genetic information can be used to inform conservation planning. I primarily work with
-        alpine and migratory bird species, combining genomic data, environmental modeling, and spatial
-        analyses to understand patterns of local adaptation, population structure, and vulnerability
-        to climate change.
+        I am a PhD candidate in Ecology at Colorado State University studying conservation
+        genomics and avian ecology. My research focuses on how populations adapt to
+        environmental change and how genetic information can be used to inform conservation
+        planning. I primarily work with alpine and migratory bird species, combining genomic
+        data, environmental modeling, and spatial analyses to understand patterns of local
+        adaptation, population structure, and vulnerability to climate change.
       </p>
-
       <p>
         More broadly, I am interested in how evolutionary processes shape biodiversity across
-        landscapes and how these insights can be applied to conservation decision-making. Alongside my
-        research, I am passionate about avian biology more generally, as well as the intersection
-        between science and art through nature journaling and scientific illustration.
+        landscapes and how these insights can be applied to conservation decision-making.
+        Alongside my research, I am passionate about avian biology more generally, as well as
+        the intersection between science and art through nature journaling and scientific
+        illustration.
       </p>
     </section>
 
     <section class="links">
-      <h2>Selected Links</h2>
+      <p class="eyebrow-label">Elsewhere</p>
+      <h2 class="section-heading">Selected Links</h2>
       <ul>
-        <li><a href="https://scholar.google.com/citations?user=qycHvMkAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-        <li><a href="https://github.com/ecnrobertson" target="_blank">GitHub</a></li>
-        <li><a href="Robertson_CV_2-26.pdf" target="_blank">CV PDF</a></li>
+        <li><a href="https://scholar.google.com/citations?user=qycHvMkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://github.com/ecnrobertson" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="Robertson_CV_2-26.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <p class="eyebrow-label">Get in touch</p>
+      <h2 class="section-heading">Contact</h2>
       <p>Email: <a href="mailto:ecn.robertson@colostate.edu">ecn.robertson@colostate.edu</a></p>
     </section>
+
   </main>
 
-  <footer>
-    <p>© 2026 Erica C.N. Robertson</p>
+  <footer class="site-footer">
+    <p>&copy; 2026 Erica C.N. Robertson</p>
   </footer>
+
 </body>
 </html>
