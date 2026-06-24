@@ -1,92 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Erica C.N. Robertson</title>
-
-  <!-- This line connects the page to our shared stylesheet.
-       Every page in the site links to the same style.css file,
-       so changing one file updates the look everywhere. -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Google Fonts: loads the two typefaces used across the site -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,500&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <header class="site-header">
-    <p class="eyebrow">PhD Candidate · Ecology</p>
-    <h1>Erica C.N. Robertson</h1>
-    <p>Conservation Genomics &middot; Ecology &middot; Research &middot; Art</p>
+<body>
+  <header class="site-header image-header">
+    <div class="header-overlay">
+      <p class="eyebrow">PhD Candidate · Ecology</p>
+      <h1>Erica C.N. Robertson</h1>
+      <p>Conservation Genomics · Ecology · Research · Art</p>
+    </div>
   </header>
 
-  <!-- The nav is repeated on every page. The "is-active" class
-       marks which page we're currently on, underlining it. -->
   <nav class="site-nav">
-    <ul>
-      <li><a href="index.html" class="is-active">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="illustration.html">Art &amp; Visualization</a></li>
-    </ul>
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="illustration.html">Art & Visualization</a>
   </nav>
 
-  <main>
+  <main class="page">
+    <section class="about-layout">
+      <aside class="about-sidebar">
+        <img src="images/profile.jpg" alt="Erica C.N. Robertson" class="profile-photo">
 
-    <section class="hero">
-      <h2>Welcome</h2>
-      <p>
-        I am a PhD candidate in Ecology at Colorado State University studying conservation
-        genomics, avian ecology, and how evolutionary and environmental processes shape
-        biodiversity across landscapes.
-      </p>
-      <a class="button" href="research.html">View Research</a>
-      <a class="button" href="illustration.html">View Art &amp; Visualization</a>
+        <h2>Erica C.N. Robertson</h2>
+        <p class="sidebar-title">PhD Candidate · Ecology</p>
+        <p>Colorado State University</p>
+
+        <hr>
+
+        <ul class="sidebar-links">
+          <li><a href="mailto:ecn.robertson@colostate.edu">Email</a></li>
+          <li><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></li>
+          <li><a href="https://github.com/ecnrobertson" target="_blank">GitHub</a></li>
+          <li><a href="Robertson_CV_2-26.pdf">CV</a></li>
+        </ul>
+      </aside>
+
+      <div class="about-main">
+        <p class="section-label">About</p>
+        <h2>Conservation genomics, avian ecology, and visual science communication</h2>
+
+        <p>
+          I am a PhD candidate in Ecology at Colorado State University studying conservation genomics and avian ecology. My research focuses on how populations adapt to environmental change and how genetic information can be used to inform conservation planning.
+        </p>
+
+        <p>
+          I primarily work with alpine and migratory bird species, combining genomic data, environmental modeling, and spatial analyses to understand patterns of local adaptation, population structure, and vulnerability to climate change.
+        </p>
+
+        <p>
+          More broadly, I am interested in how evolutionary processes shape biodiversity across landscapes and how these insights can be applied to conservation decision-making. Alongside my research, I am interested in avian biology, nature journaling, and scientific illustration.
+        </p>
+      </div>
     </section>
-
-    <section id="about">
-      <h2 class="section-heading">About</h2>
-      <p>
-        I am a PhD candidate in Ecology at Colorado State University studying conservation
-        genomics and avian ecology. My research focuses on how populations adapt to
-        environmental change and how genetic information can be used to inform conservation
-        planning. I primarily work with alpine and migratory bird species, combining genomic
-        data, environmental modeling, and spatial analyses to understand patterns of local
-        adaptation, population structure, and vulnerability to climate change.
-      </p>
-      <p>
-        More broadly, I am interested in how evolutionary processes shape biodiversity across
-        landscapes and how these insights can be applied to conservation decision-making.
-        Alongside my research, I am passionate about avian biology more generally, as well as
-        the intersection between science and art through nature journaling and scientific
-        illustration.
-      </p>
-    </section>
-
-    <section class="links">
-      <h2 class="section-heading">Selected Links</h2>
-      <ul>
-        <li><a href="https://scholar.google.com/citations?user=qycHvMkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
-        <li><a href="https://github.com/ecnrobertson" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="Robertson_CV_2-26.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-heading">Contact</h2>
-      <p>Email: <a href="mailto:ecn.robertson@colostate.edu">ecn.robertson@colostate.edu</a></p>
-    </section>
-
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Erica C.N. Robertson</p>
+  <footer>
+    <p>© 2026 Erica C.N. Robertson</p>
   </footer>
-
 </body>
 </html>

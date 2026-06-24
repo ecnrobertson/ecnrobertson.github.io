@@ -1,71 +1,40 @@
 /* ============================================
    STYLE.CSS
-   This one file controls the look of every page
-   on the site (index.html, research.html,
-   illustration.html). Each page links to it with:
-     <link rel="stylesheet" href="style.css">
+   Shared styling for index.html, research.html,
+   and illustration.html
    ============================================ */
 
-
-/* --------------------------------------------
-   1. DESIGN TOKENS (CSS variables)
-   --------------------------------------------
-   Think of these as "named colors and sizes."
-   Instead of typing #B5572D every time you want
-   the rust color, you type var(--rosy). If you
-   ever want to change the whole site's color
-   scheme, you only edit it here, in ONE place,
-   instead of hunting through every file.
-
-   :root means "the whole document" — these
-   variables become available everywhere.
-   -------------------------------------------- */
 :root {
-  /* Colors — inspired by a field notebook:
-     aged paper, ink, alpine pine, and the rust
-     of a rosy-finch's plumage. */
-  --paper: #f4efe3;       /* page background */
-  --paper-raised: #fbf8f0; /* slightly lighter, for cards sitting "on top" of the page */
-  --ink: #2b2a24;          /* main text color */
-  --ink-soft: #4a473d;     /* slightly lighter text, for body copy */
-  --pine: #3d5245;         /* deep green — header, nav text, primary accent */
-  --pine-dark: #2c3c33;    /* darker green for hover states */
-  --rosy: #b5572d;         /* rust/terracotta — links, buttons, highlights */
-  --rosy-dark: #8f431f;    /* darker rust for hover states */
-  --stone: #c9c2ac;        /* muted tan — borders, dividers */
-  --mist: #6b7268;         /* soft grey-green — captions, secondary text */
+  --paper: #f4efe3;
+  --paper-raised: #fbf8f0;
+  --ink: #2b2a24;
+  --ink-soft: #4a473d;
+  --pine: #3d5245;
+  --pine-dark: #2c3c33;
+  --rosy: #b5572d;
+  --rosy-dark: #8f431f;
+  --stone: #c9c2ac;
+  --mist: #6b7268;
 
-  /* Typography */
   --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-body: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
-  /* Spacing scale — reusing a handful of sizes
-     keeps the whole site feeling consistent
-     instead of random gaps everywhere. */
   --space-sm: 0.75rem;
   --space-md: 1.5rem;
   --space-lg: 3rem;
   --space-xl: 5rem;
 
-  /* Shared rounding + shadow so every card/button matches */
-  --radius: 10px;
-  --shadow: 0 1px 2px rgba(43, 42, 36, 0.06), 0 4px 12px rgba(43, 42, 36, 0.06);
+  --max-width: 1050px;
 }
 
+/* Base */
 
-/* --------------------------------------------
-   2. RESET / BASE DEFAULTS
-   --------------------------------------------
-   Browsers ship with their own default spacing
-   and font choices. This section resets those
-   so we start from a predictable blank slate.
-   -------------------------------------------- */
 * {
-  box-sizing: border-box; /* padding/border are included in an element's width, not added on top */
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth; /* smooth scroll when jumping to #anchors */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -77,16 +46,27 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   color: var(--ink);
   line-height: 1.25;
   margin: 0 0 var(--space-sm);
+  font-weight: 500;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 1.85rem); }
-h3 { font-size: 1.15rem; }
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.25rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
 
 p {
   margin: 0 0 var(--space-sm);
@@ -103,66 +83,103 @@ a:focus-visible {
   text-decoration: underline;
 }
 
-/* Keyboard users tab between links/buttons — this
-   makes sure they can always see where they are. */
 :focus-visible {
   outline: 2px solid var(--rosy);
   outline-offset: 2px;
 }
 
 img {
-  max-width: 100%; /* images never overflow their container */
+  max-width: 100%;
   display: block;
 }
 
+/* Header banner */
 
-/* --------------------------------------------
-   3. LAYOUT — HEADER
-   --------------------------------------------
-   The big banner at the top of every page.
-   -------------------------------------------- */
-.site-header {
+.site-banner {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
   background: var(--pine);
-  color: var(--paper);
-  padding: var(--space-xl) var(--space-md) var(--space-lg);
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.site-header {
+  background: var(--paper-raised);
+  border-bottom: 1px solid var(--stone);
+  color: var(--ink);
+  padding: var(--space-lg) var(--space-md);
   text-align: center;
 }
 
-.site-header .eyebrow {
+.image-header {
+  min-height: 380px;
+  background:
+    linear-gradient(
+      rgba(35, 45, 40, 0.42),
+      rgba(35, 45, 40, 0.58)
+    ),
+    url("images/banner.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: none;
+  padding: 0;
+}
+
+.header-overlay {
+  width: 100%;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  text-align: center;
+  color: white;
+}
+
+.header-overlay h1,
+.header-overlay p,
+.site-header.image-header h1,
+.site-header.image-header p {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.site-header .eyebrow,
+.eyebrow {
   font-family: var(--font-body);
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: var(--rosy);
   margin: 0 0 var(--space-sm);
 }
 
+.image-header .eyebrow {
+  color: #f4efe3;
+}
+
 .site-header h1 {
-  color: var(--paper);
   margin-bottom: var(--space-sm);
 }
 
 .site-header p {
   margin: 0;
   font-size: 1.05rem;
-  color: var(--stone);
+  color: var(--mist);
 }
 
+/* Navigation */
 
-/* --------------------------------------------
-   4. LAYOUT — NAVIGATION
-   --------------------------------------------
-   "position: sticky; top: 0;" keeps the nav bar
-   visible at the top of the screen even as the
-   user scrolls down the page.
-   -------------------------------------------- */
 .site-nav {
   background: var(--paper-raised);
   border-bottom: 1px solid var(--stone);
   padding: var(--space-sm) var(--space-md);
   position: sticky;
   top: 0;
-  z-index: 10; /* keeps nav above other content while scrolling */
+  z-index: 10;
 }
 
 .site-nav ul {
@@ -173,6 +190,10 @@ img {
   padding: 0;
   margin: 0;
   flex-wrap: wrap;
+}
+
+.site-nav > a {
+  margin: 0 var(--space-md);
 }
 
 .site-nav a {
@@ -188,24 +209,17 @@ img {
   text-decoration: none;
 }
 
-/* Highlights whichever nav link matches the current page.
-   We add the class "is-active" by hand in each HTML file. */
 .site-nav a.is-active {
   color: var(--rosy);
   border-bottom: 2px solid var(--rosy);
   padding-bottom: 2px;
 }
 
+/* Main layout */
 
-/* --------------------------------------------
-   5. LAYOUT — MAIN CONTENT AREA
-   --------------------------------------------
-   max-width + margin: 0 auto centers the content
-   and keeps lines of text from stretching too
-   wide to read comfortably.
-   -------------------------------------------- */
-main {
-  max-width: 980px;
+main,
+.page {
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md) var(--space-xl);
 }
@@ -214,27 +228,111 @@ section {
   margin-bottom: var(--space-xl);
 }
 
-/* The small italic tag above a section heading,
-   styled like a museum specimen label —
-   e.g. "Fig. 1" or "Field Notes". This is the
-   site's one signature, recurring detail. */
-
 .section-heading {
   border-bottom: 1px solid var(--stone);
   padding-bottom: var(--space-sm);
   margin-bottom: var(--space-md);
 }
 
+.eyebrow-label,
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--rosy);
+  margin-bottom: 0.35rem;
+}
 
-/* --------------------------------------------
-   6. HERO / INTRO BOX
-   -------------------------------------------- */
+.section-label {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* About page */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.about-sidebar {
+  border-right: 1px solid var(--stone);
+  padding-right: var(--space-md);
+}
+
+.about-photo,
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1.12;
+  object-fit: cover;
+  margin-bottom: var(--space-md);
+}
+
+.about-sidebar .name,
+.about-sidebar h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 0 0 0.25rem;
+}
+
+.about-sidebar .title,
+.sidebar-title {
+  font-size: 0.95rem;
+  color: var(--pine);
+  font-weight: 600;
+  margin: 0.2rem 0 0;
+}
+
+.about-sidebar .org {
+  font-size: 0.9rem;
+  color: var(--mist);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-sidebar hr {
+  border: none;
+  border-top: 1px solid var(--stone);
+  width: 100%;
+  margin: var(--space-md) 0;
+}
+
+.about-sidebar .sidebar-links,
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.about-bio,
+.about-main {
+  max-width: 720px;
+}
+
+.about-bio h2,
+.about-main h2 {
+  margin-top: 0;
+}
+
+/* Intro and flat sections */
+
 .hero,
-.intro {
-  background: var(--paper-raised);
-  border: 1px solid var(--stone);
-  border-radius: var(--radius);
-  padding: var(--space-lg);
+.intro,
+.flat-section {
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--stone);
 }
 
 .hero h2,
@@ -242,10 +340,8 @@ section {
   margin-top: 0;
 }
 
+/* Buttons */
 
-/* --------------------------------------------
-   7. BUTTONS
-   -------------------------------------------- */
 .button,
 .button-link {
   display: inline-block;
@@ -254,7 +350,7 @@ section {
   background: var(--rosy);
   color: var(--paper);
   padding: 0.7rem 1.2rem;
-  border-radius: var(--radius);
+  border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -275,33 +371,27 @@ section {
   transform: translateY(1px);
 }
 
+/* Research and project entries */
 
-/* --------------------------------------------
-   8. CARDS (used for research chapters, etc.)
-   --------------------------------------------
-   "grid-template-columns: repeat(auto-fit, ...)"
-   automatically fits as many columns as will
-   comfortably fit, and wraps to fewer columns
-   on narrow/mobile screens — no media query
-   needed for this part.
-   -------------------------------------------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .card,
 .project-card {
-  background: var(--paper-raised);
-  border: 1px solid var(--stone);
-  border-radius: var(--radius);
-  padding: var(--space-md);
-  box-shadow: var(--shadow);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: var(--space-md) 0 var(--space-lg);
+  border-bottom: 1px solid var(--stone);
 }
 
-.project-card {
-  margin-bottom: var(--space-md);
+.grid .card {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .card h3,
@@ -310,10 +400,8 @@ section {
   color: var(--pine);
 }
 
+/* Galleries */
 
-/* --------------------------------------------
-   9. IMAGE GALLERIES
-   -------------------------------------------- */
 .gallery-published,
 .gallery-ongoing {
   display: grid;
@@ -322,27 +410,29 @@ section {
   margin-top: var(--space-md);
 }
 
-.gallery-portfolio {
+.gallery-portfolio,
+.gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
 .gallery-item,
 .gallery-item-portfolio {
-  background: var(--paper-raised);
-  border: 1px solid var(--stone);
-  border-radius: var(--radius);
-  padding: var(--space-sm);
-  box-shadow: var(--shadow);
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .gallery-item img,
 .gallery-item-portfolio img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover; /* crops the image to fill the square without distorting it */
-  border-radius: 6px;
+  object-fit: cover;
+  border-radius: 4px;
   margin-bottom: var(--space-sm);
 }
 
@@ -352,11 +442,12 @@ section {
 }
 
 .gallery-item-portfolio img:hover {
-  transform: scale(1.03);
+  transform: scale(1.025);
 }
 
 .gallery-item p,
-.gallery-item-portfolio p {
+.gallery-item-portfolio p,
+.gallery-item-portfolio figcaption {
   margin: 0;
   font-size: 0.9rem;
   color: var(--mist);
@@ -370,10 +461,8 @@ section {
   color: var(--pine);
 }
 
+/* Links */
 
-/* --------------------------------------------
-   10. LINKS LIST (Selected Links section)
-   -------------------------------------------- */
 .links ul {
   list-style: none;
   padding: 0;
@@ -387,11 +476,10 @@ section {
   font-weight: 600;
 }
 
+/* Footer */
 
-/* --------------------------------------------
-   11. FOOTER
-   -------------------------------------------- */
-.site-footer {
+.site-footer,
+footer {
   text-align: center;
   padding: var(--space-lg);
   color: var(--mist);
@@ -400,32 +488,62 @@ section {
   font-size: 0.9rem;
 }
 
+/* Responsive */
 
-/* --------------------------------------------
-   12. RESPONSIVE ADJUSTMENTS
-   --------------------------------------------
-   A "media query" applies styles only when the
-   screen is narrower than a given width — this
-   is how we adapt the layout for phones.
-   -------------------------------------------- */
-@media (max-width: 600px) {
-  .gallery-published,
-  .gallery-ongoing {
-    grid-template-columns: 1fr; /* stack to a single column on small screens */
+@media (max-width: 760px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
-  .site-header {
-    padding: var(--space-lg) var(--space-md);
+  .about-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--stone);
+    padding-right: 0;
+    padding-bottom: var(--space-md);
+  }
+
+  .about-photo,
+  .profile-photo {
+    max-width: 240px;
+  }
+
+  .image-header {
+    min-height: 260px;
+  }
+
+  .site-nav ul {
+    gap: var(--space-md);
+  }
+
+  .site-nav > a {
+    display: inline-block;
+    margin: 0.25rem var(--space-sm);
   }
 }
 
+@media (max-width: 600px) {
+  .gallery-published,
+  .gallery-ongoing {
+    grid-template-columns: 1fr;
+  }
 
-/* --------------------------------------------
-   13. REDUCED MOTION
-   --------------------------------------------
-   Respects users who've asked their device to
-   minimize animations (an accessibility setting).
-   -------------------------------------------- */
+  .site-banner {
+    height: 200px;
+  }
+
+  .site-header {
+    padding: var(--space-md);
+  }
+
+  main,
+  .page {
+    padding: var(--space-md);
+  }
+}
+
+/* Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
