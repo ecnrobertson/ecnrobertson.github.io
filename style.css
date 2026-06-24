@@ -403,6 +403,62 @@ section {
   color: var(--pine);
 }
 
+/* Featured figure contributions */
+
+.featured-work {
+  margin-bottom: var(--space-xl);
+}
+
+.featured-work > h2 {
+  max-width: 780px;
+  margin-bottom: var(--space-lg);
+}
+
+.featured-figure {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--stone);
+}
+
+.featured-figure:last-child {
+  margin-bottom: 0;
+}
+
+.featured-figure.reverse {
+  grid-template-columns: 1fr 320px;
+}
+
+.featured-figure.reverse .featured-figure-image {
+  order: 2;
+}
+
+.featured-figure.reverse .featured-figure-text {
+  order: 1;
+}
+
+.featured-figure-image img {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--paper-raised);
+  border: 1px solid var(--stone);
+  border-radius: 4px;
+}
+
+.featured-figure-text h3 {
+  color: var(--pine);
+  margin-top: 0;
+}
+
+.featured-figure-text p {
+  max-width: 680px;
+}
+
 /* Galleries */
 
 .gallery-published,
@@ -456,23 +512,43 @@ section {
   color: var(--mist);
 }
 
+.portfolio-section {
+  margin-top: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--stone);
+}
+
+.portfolio-section:last-child {
+  border-bottom: none;
+}
+
 .portfolio-subsection {
   margin-top: var(--space-lg);
 }
 
-.portfolio-subsection h3 {
+.portfolio-subsection h3,
+.portfolio-section h2 {
   color: var(--pine);
 }
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
 .scroll-gallery {
   display: flex;
   gap: var(--space-md);
   overflow-x: auto;
-  padding-bottom: var(--space-sm);
+  padding: 0 0 var(--space-md);
   scroll-snap-type: x proximity;
 }
 
 .scroll-gallery-item {
-  flex: 0 0 260px;
+  flex: 0 0 200px;
   margin: 0;
   scroll-snap-align: start;
 }
@@ -482,6 +558,14 @@ section {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 4px;
+  margin-bottom: var(--space-sm);
+}
+
+.scroll-gallery-item figcaption,
+.scroll-gallery-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--mist);
 }
 
 /* Links */
@@ -529,6 +613,25 @@ footer {
   .about-photo,
   .profile-photo {
     max-width: 240px;
+  }
+
+  .featured-figure,
+  .featured-figure.reverse {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .featured-figure.reverse .featured-figure-image,
+  .featured-figure.reverse .featured-figure-text {
+    order: initial;
+  }
+
+  .featured-figure-image img {
+    max-width: 100%;
+  }
+
+  .scroll-gallery-item {
+    flex-basis: 170px;
   }
 
   .image-header {
