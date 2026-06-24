@@ -463,6 +463,26 @@ section {
 .portfolio-subsection h3 {
   color: var(--pine);
 }
+.scroll-gallery {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+  scroll-snap-type: x proximity;
+}
+
+.scroll-gallery-item {
+  flex: 0 0 260px;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.scroll-gallery-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 /* Links */
 
