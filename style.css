@@ -239,7 +239,7 @@ section {
   display: inline-block;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--rosy);
   margin-bottom: 0.35rem;
 }
