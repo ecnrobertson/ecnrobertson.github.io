@@ -218,14 +218,6 @@ section {
    styled like a museum specimen label —
    e.g. "Fig. 1" or "Field Notes". This is the
    site's one signature, recurring detail. */
-.eyebrow-label {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.9rem;
-  color: var(--rosy);
-  margin-bottom: 0.35rem;
-}
 
 .section-heading {
   border-bottom: 1px solid var(--stone);
