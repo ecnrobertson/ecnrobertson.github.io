@@ -422,6 +422,89 @@ Promise.all([
     .attr("font-size", 17)
     .attr("font-weight", 600);
 
+// =======================================================
+// LAYER 5 — 1960s REMNANT
+// =======================================================
+
+const remnantLayer = svg
+  .append("g")
+  .attr("class", "remnant-layer")
+  .attr("opacity", 0);
+
+
+// Approximate northeastern Minnesota location
+const minnesotaPoint = projection([
+  -92.5,
+  47.7
+]);
+
+
+if (minnesotaPoint) {
+
+  // Soft approximate stronghold area
+  remnantLayer
+    .append("ellipse")
+    .attr("cx", minnesotaPoint[0])
+    .attr("cy", minnesotaPoint[1])
+    .attr("rx", 30)
+    .attr("ry", 25)
+    .attr("fill", "#526146")
+    .attr("fill-opacity", 0.72)
+    .attr("stroke", "#34402d")
+    .attr("stroke-width", 1.5)
+    .attr("stroke-dasharray", "4 3");
+
+
+  // Minnesota label
+  remnantLayer
+    .append("text")
+    .attr("x", minnesotaPoint[0] + 50)
+    .attr("y", minnesotaPoint[1] + 4)
+    .attr("fill", "#2e3829")
+    .attr("font-size", 14)
+    .attr("font-weight", 600)
+    .text("Northeastern Minnesota");
+
+}
+
+// Isle Royale population
+const isleRoyalePoint = projection([
+  -89.0,
+  48.0
+]);
+
+if (isleRoyalePoint) {
+
+  remnantLayer
+    .append("circle")
+    .attr("cx", isleRoyalePoint[0])
+    .attr("cy", isleRoyalePoint[1])
+    .attr("r", 5)
+    .attr("fill", "#526146")
+    .attr("stroke", "#2e3829")
+    .attr("stroke-width", 1.5);
+
+
+  remnantLayer
+    .append("text")
+    .attr("x", isleRoyalePoint[0] + 10)
+    .attr("y", isleRoyalePoint[1] - 8)
+    .attr("fill", "#2e3829")
+    .attr("font-size", 12)
+    .attr("font-weight", 600)
+    .text("Isle Royale");
+    
+  remnantLayer
+  .append("text")
+  .attr("x", width - 25)
+  .attr("y", height - 20)
+  .attr("text-anchor", "end")
+  .attr("fill", "#555")
+  .attr("font-size", 11)
+  .attr("font-style", "italic")
+  .text("Approximate range");
+
+}
 
   // =======================================================
   // SCROLL STATES
@@ -441,7 +524,18 @@ Promise.all([
       .duration(700)
       .attr("opacity", 0);
 
+wolfRangeLayer
+  .interrupt()
+  .transition()
+  .duration(700)
+  .attr("opacity", 1);
 
+remnantLayer
+  .interrupt()
+  .transition()
+  .duration(500)
+  .attr("opacity", 0);
+  
     // Reset entire mask to white.
     wolfMaskGradient
       .select(".wolf-stop-1")
@@ -493,7 +587,18 @@ Promise.all([
       .transition()
       .duration(900)
       .attr("opacity", 1);
+      
+wolfRangeLayer
+  .interrupt()
+  .transition()
+  .duration(700)
+  .attr("opacity", 1);
 
+remnantLayer
+  .interrupt()
+  .transition()
+  .duration(500)
+  .attr("opacity", 0);
 
     // Far western portion remains visible.
     wolfMaskGradient
@@ -574,10 +679,6 @@ const mapLabels = [
     title: "Wolf eradication intensifies"
   },
   {
-    date: "Early 20th century",
-    title: "Range collapse"
-  },
-  {
     date: "By the 1960s",
     title: "A last stronghold"
   }
@@ -601,7 +702,18 @@ function showEradication() {
   // Show archival hunting / trapping photographs
   archivalImages.classList.add("is-visible");
 
+wolfRangeLayer
+  .interrupt()
+  .transition()
+  .duration(700)
+  .attr("opacity", 1);
 
+remnantLayer
+  .interrupt()
+  .transition()
+  .duration(500)
+  .attr("opacity", 0);
+  
   // Push range loss farther west
   wolfMaskGradient
     .select(".wolf-stop-2")
@@ -630,6 +742,41 @@ function showEradication() {
     .attr("stop-color", "black");
 }
 
+// =======================================================
+// STEP 3 — LAST STRONGHOLD
+// =======================================================
+
+function showLastStronghold() {
+
+  // Remove archival hunting photographs
+  archivalImages.classList.remove("is-visible");
+
+
+  // Remove colonization overlay
+  colonizationLayer
+    .interrupt()
+    .transition()
+    .duration(700)
+    .attr("opacity", 0);
+
+
+  // Turn the old historic range into a faint ghost
+  wolfRangeLayer
+    .interrupt()
+    .transition()
+    .duration(1000)
+    .attr("opacity", 0.12);
+
+
+  // Reveal approximate Minnesota stronghold
+  remnantLayer
+    .interrupt()
+    .transition()
+    .delay(300)
+    .duration(900)
+    .attr("opacity", 1);
+
+}
 
 // =======================================================
 // HANDLE SCROLL STEP
@@ -690,6 +837,16 @@ function handleStepEnter(response) {
   if (response.index === 2) {
 
     showEradication();
+
+  }
+  
+  // -------------------------------------------------------
+  // STEP 3 — LAST STRONGHOLD
+  // -------------------------------------------------------
+
+  if (response.index === 3) {
+
+    showLastStronghold();
 
   }
 
