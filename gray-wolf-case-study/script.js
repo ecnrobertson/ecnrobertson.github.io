@@ -1,4 +1,54 @@
 // =========================================================
+// WOLF MAP
+// =========================================================
+
+const svg = d3.select("#wolf-map");
+
+const width = 900;
+const height = 650;
+
+
+// Load the two historic-range features
+Promise.all([
+  d3.json("assets/maps/historic-range_obj1.geojson"),
+  d3.json("assets/maps/historic-range_obj2.geojson")
+]).then(([range1, range2]) => {
+
+  // Combine both downloaded files into one FeatureCollection
+  const historicRange = {
+    type: "FeatureCollection",
+    features: [
+      ...range1.features,
+      ...range2.features
+    ]
+  };
+
+
+  // Geographic projection
+  const projection = d3
+    .geoAlbers()
+    .fitExtent(
+      [[30, 30], [width - 30, height - 30]],
+      historicRange
+    );
+
+
+  // Converts geographic coordinates into SVG paths
+  const path = d3.geoPath()
+    .projection(projection);
+
+
+  // Draw the wolf range
+  svg
+    .selectAll(".historic-range")
+    .data(historicRange.features)
+    .join("path")
+    .attr("class", "historic-range")
+    .attr("d", path);
+
+});
+
+// =========================================================
 // GRAY WOLF CASE STUDY
 // Scroll-driven interactions
 // =========================================================

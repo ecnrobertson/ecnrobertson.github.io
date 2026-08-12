@@ -83,13 +83,18 @@
 
       <div id="map-placeholder" class="map-placeholder">
 
-        <div class="map-state active" data-state="0">
-          <p class="map-date">Before European settlement</p>
-          <h2>Historical wolf range</h2>
-          <p>
-            Placeholder: almost all of North America highlighted.
-          </p>
-        </div>
+        <div id="wolf-map-container">
+          <svg
+          id="wolf-map"
+          viewBox="0 0 900 650"
+          role="img"
+          aria-label="Map showing historical gray wolf range in North America">
+            
+          </svg>
+          <div id="map-label">
+            <p class="map-date">Before European settlement</p>
+            <h2>Historical wolf range</h2>
+            </div>
 
         <div class="map-state" data-state="1">
           <p class="map-date">1700s–1800s</p>
@@ -215,9 +220,19 @@
 
   <!-- Scrollama library -->
   <script src="https://unpkg.com/scrollama"></script>
+  
+  <!-- D3 -->
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="script.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="script.js"></script>
 
   <!-- Our code -->
   <script src="script.js"></script>
+  
+ 
 
 </body>
 </html>
