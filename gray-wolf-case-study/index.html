@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-  <!-- Simple navigation back to the main website -->
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+
   <nav class="site-nav">
     <a href="../index.html">About</a>
     <a href="../research.html">Research</a>
@@ -31,6 +36,7 @@
   <header class="wolf-hero">
 
     <div class="wolf-hero-content">
+
       <p class="eyebrow">Interactive Case Study</p>
 
       <h1>Gray Wolves and the Endangered Species Act</h1>
@@ -42,6 +48,7 @@
       <p class="scroll-prompt">
         Scroll to begin ↓
       </p>
+
     </div>
 
   </header>
@@ -69,64 +76,32 @@
 
 
   <!-- =========================================================
-       SCROLLY SECTION 1
+       SCROLLYTELLING SECTION 1
        ========================================================= -->
 
   <section id="range-scrolly" class="scrolly">
 
-    <!--
-      This stays "stuck" on the screen while the text beside it scrolls.
-      Later this will contain our actual wolf map.
-    -->
+
+    <!-- =======================================================
+         STICKY GRAPHIC
+         ======================================================= -->
 
     <div class="sticky-graphic">
 
-      <div id="map-placeholder" class="map-placeholder">
+      <div id="wolf-map-container">
 
-        <div id="wolf-map-container">
-          <svg
+        <!-- Actual D3 map -->
+        <svg
           id="wolf-map"
           viewBox="0 0 900 650"
           role="img"
           aria-label="Map showing historical gray wolf range in North America">
-            
-          </svg>
-          <div id="map-label">
-            <p class="map-date">Before European settlement</p>
-            <h2>Historical wolf range</h2>
-            </div>
+        </svg>
 
-        <div class="map-state" data-state="1">
-          <p class="map-date">1700s–1800s</p>
-          <h2>Settlement expands</h2>
-          <p>
-            Placeholder: settlement spreads westward.
-          </p>
-        </div>
-
-        <div class="map-state" data-state="2">
-          <p class="map-date">1800s–1900s</p>
-          <h2>Systematic eradication</h2>
-          <p>
-            Placeholder: wolf range begins shrinking.
-          </p>
-        </div>
-
-        <div class="map-state" data-state="3">
-          <p class="map-date">Early 1900s</p>
-          <h2>Range collapse</h2>
-          <p>
-            Placeholder: only scattered populations remain.
-          </p>
-        </div>
-
-        <div class="map-state" data-state="4">
-          <p class="map-date">1960s</p>
-          <h2>A remnant population</h2>
-          <p>
-            Placeholder: wolves persist primarily in northern Minnesota
-            and adjoining Canada.
-          </p>
+        <!-- Map title -->
+        <div id="map-label">
+          <p class="map-date">Before European settlement</p>
+          <h2>Historical wolf range</h2>
         </div>
 
       </div>
@@ -134,10 +109,9 @@
     </div>
 
 
-    <!--
-      These are the narrative steps.
-      Scrollama watches them enter the middle of the browser window.
-    -->
+    <!-- =======================================================
+         SCROLLING TEXT
+         ======================================================= -->
 
     <div class="scrolly-text">
 
@@ -148,6 +122,7 @@
         </p>
       </div>
 
+
       <div class="step" data-step="1">
         <p>
           European colonization transformed the continent. Settlements,
@@ -155,6 +130,7 @@
           wolf habitat.
         </p>
       </div>
+
 
       <div class="step" data-step="2">
         <p>
@@ -164,12 +140,14 @@
         </p>
       </div>
 
+
       <div class="step" data-step="3">
         <p>
           Hunting, trapping, poisoning, and bounty programs eliminated
           wolves from much of the contiguous United States.
         </p>
       </div>
+
 
       <div class="step" data-step="4">
         <p>
@@ -204,7 +182,10 @@
   </section>
 
 
-  <!-- Temporary spacer so we can test scrolling -->
+  <!-- =========================================================
+       TEMPORARY NEXT SECTION
+       ========================================================= -->
+
   <section class="coming-next">
 
     <p class="section-label">Next</p>
@@ -218,21 +199,16 @@
   </section>
 
 
-  <!-- Scrollama library -->
-  <script src="https://unpkg.com/scrollama"></script>
-  
-  <!-- D3 -->
-  <script src="https://unpkg.com/scrollama"></script>
-  <script src="script.js"></script>
-  
+  <!-- =========================================================
+       JAVASCRIPT LIBRARIES
+       Order matters:
+       D3 → Scrollama → our script
+       ========================================================= -->
+
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="https://unpkg.com/scrollama"></script>
   <script src="script.js"></script>
 
-  <!-- Our code -->
-  <script src="script.js"></script>
-  
- 
-
 </body>
+
 </html>
