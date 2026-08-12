@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gray Wolves and the Endangered Species Act | Erica Robertson</title>
+
+  <!-- Main website styles -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Case-study-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Simple navigation back to the main website -->
+  <nav class="site-nav">
+    <a href="../index.html">About</a>
+    <a href="../research.html">Research</a>
+    <a href="../illustration.html">Art & Visualization</a>
+    <a href="../teaching.html">Course Materials</a>
+  </nav>
+
+
+  <!-- =========================================================
+       OPENING / HERO
+       ========================================================= -->
+
+  <header class="wolf-hero">
+
+    <div class="wolf-hero-content">
+      <p class="eyebrow">Interactive Case Study</p>
+
+      <h1>Gray Wolves and the Endangered Species Act</h1>
+
+      <p class="hero-subtitle">
+        How do we decide when a species has recovered?
+      </p>
+
+      <p class="scroll-prompt">
+        Scroll to begin ↓
+      </p>
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       INTRODUCTION
+       ========================================================= -->
+
+  <section class="story-intro">
+
+    <p class="section-label">The story begins</p>
+
+    <h2>
+      Gray wolves once occupied most of North America.
+    </h2>
+
+    <p>
+      Over the next several centuries, that range would contract dramatically.
+      Scroll through the story to see how wolves moved from widespread
+      persecution to federal protection and recovery.
+    </p>
+
+  </section>
+
+
+  <!-- =========================================================
+       SCROLLY SECTION 1
+       ========================================================= -->
+
+  <section id="range-scrolly" class="scrolly">
+
+    <!--
+      This stays "stuck" on the screen while the text beside it scrolls.
+      Later this will contain our actual wolf map.
+    -->
+
+    <div class="sticky-graphic">
+
+      <div id="map-placeholder" class="map-placeholder">
+
+        <div class="map-state active" data-state="0">
+          <p class="map-date">Before European settlement</p>
+          <h2>Historical wolf range</h2>
+          <p>
+            Placeholder: almost all of North America highlighted.
+          </p>
+        </div>
+
+        <div class="map-state" data-state="1">
+          <p class="map-date">1700s–1800s</p>
+          <h2>Settlement expands</h2>
+          <p>
+            Placeholder: settlement spreads westward.
+          </p>
+        </div>
+
+        <div class="map-state" data-state="2">
+          <p class="map-date">1800s–1900s</p>
+          <h2>Systematic eradication</h2>
+          <p>
+            Placeholder: wolf range begins shrinking.
+          </p>
+        </div>
+
+        <div class="map-state" data-state="3">
+          <p class="map-date">Early 1900s</p>
+          <h2>Range collapse</h2>
+          <p>
+            Placeholder: only scattered populations remain.
+          </p>
+        </div>
+
+        <div class="map-state" data-state="4">
+          <p class="map-date">1960s</p>
+          <h2>A remnant population</h2>
+          <p>
+            Placeholder: wolves persist primarily in northern Minnesota
+            and adjoining Canada.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!--
+      These are the narrative steps.
+      Scrollama watches them enter the middle of the browser window.
+    -->
+
+    <div class="scrolly-text">
+
+      <div class="step" data-step="0">
+        <p>
+          For thousands of years, gray wolves occupied an enormous range
+          across North America.
+        </p>
+      </div>
+
+      <div class="step" data-step="1">
+        <p>
+          European colonization transformed the continent. Settlements,
+          livestock production, and agriculture expanded westward into
+          wolf habitat.
+        </p>
+      </div>
+
+      <div class="step" data-step="2">
+        <p>
+          Wolves were increasingly treated as threats to livestock and
+          human expansion. Governments and private individuals supported
+          intensive eradication campaigns.
+        </p>
+      </div>
+
+      <div class="step" data-step="3">
+        <p>
+          Hunting, trapping, poisoning, and bounty programs eliminated
+          wolves from much of the contiguous United States.
+        </p>
+      </div>
+
+      <div class="step" data-step="4">
+        <p>
+          By the mid-twentieth century, wolves had disappeared from almost
+          all of their former range in the lower 48 states.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       TRANSITION INTO NEXT ACT
+       ========================================================= -->
+
+  <section class="story-transition">
+
+    <p class="section-label">A new question</p>
+
+    <h2>
+      When wolves became one of America's disappearing species,
+      what exactly should the federal government protect?
+    </h2>
+
+    <p>
+      The answer was more complicated than simply listing
+      <em>Canis lupus</em>.
+    </p>
+
+  </section>
+
+
+  <!-- Temporary spacer so we can test scrolling -->
+  <section class="coming-next">
+
+    <p class="section-label">Next</p>
+
+    <h2>Federal protection</h2>
+
+    <p>
+      This is where we will build the subspecies and ESA-listing sequence.
+    </p>
+
+  </section>
+
+
+  <!-- Scrollama library -->
+  <script src="https://unpkg.com/scrollama"></script>
+
+  <!-- Our code -->
+  <script src="script.js"></script>
+
+</body>
+</html>

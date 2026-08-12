@@ -1,0 +1,283 @@
+/* =========================================================
+   GRAY WOLF CASE STUDY
+   ========================================================= */
+
+
+/* ---------- General ---------- */
+
+body {
+  margin: 0;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.wolf-hero {
+  min-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem 2rem;
+
+  background: #242722;
+  color: white;
+
+  text-align: center;
+}
+
+.wolf-hero-content {
+  max-width: 850px;
+}
+
+.wolf-hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.scroll-prompt {
+  margin-top: 5rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   STORY INTRO
+   ========================================================= */
+
+.story-intro,
+.story-transition,
+.coming-next {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8rem 2rem;
+}
+
+.story-intro h2,
+.story-transition h2,
+.coming-next h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   SCROLLYTELLING LAYOUT
+   ========================================================= */
+
+.scrolly {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr);
+
+  gap: 3rem;
+
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 0 3rem;
+}
+
+
+/* =========================================================
+   STICKY GRAPHIC
+   ========================================================= */
+
+.sticky-graphic {
+  position: sticky;
+
+  top: 10vh;
+
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Temporary map container */
+
+.map-placeholder {
+  position: relative;
+
+  width: 100%;
+  height: min(70vh, 700px);
+
+  border: 1px solid #aaa;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #e8e5dc,
+      #cbc7bc
+    );
+
+  overflow: hidden;
+}
+
+
+/* Each graphic state sits directly on top of the others */
+
+.map-state {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem;
+
+  text-align: center;
+
+  opacity: 0;
+
+  transform: scale(0.97);
+
+  transition:
+    opacity 700ms ease,
+    transform 900ms ease;
+}
+
+
+/* Only the current state is visible */
+
+.map-state.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.map-state h2 {
+  margin: 0.5rem 0;
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.map-state p {
+  max-width: 500px;
+}
+
+.map-date {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   SCROLLING TEXT
+   ========================================================= */
+
+.scrolly-text {
+  padding-top: 30vh;
+  padding-bottom: 30vh;
+}
+
+.step {
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+
+  opacity: 0.35;
+
+  transition: opacity 300ms ease;
+}
+
+.step p {
+  background: rgba(255, 255, 255, 0.95);
+
+  padding: 1.5rem;
+
+  font-size: 1.15rem;
+  line-height: 1.6;
+
+  border-left: 3px solid #777;
+}
+
+
+/* Scrollama will add this class */
+
+.step.is-active {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   TRANSITION
+   ========================================================= */
+
+.story-transition {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .scrolly {
+    display: block;
+    padding: 0;
+  }
+
+  .sticky-graphic {
+    top: 0;
+
+    height: 55vh;
+
+    z-index: 1;
+
+    background: white;
+  }
+
+  .map-placeholder {
+    height: 55vh;
+    border-left: none;
+    border-right: none;
+  }
+
+  .scrolly-text {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 0 1.5rem;
+  }
+
+  .step {
+    min-height: 80vh;
+
+    align-items: flex-end;
+
+    padding-bottom: 4rem;
+  }
+
+  .step p {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+}
