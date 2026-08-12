@@ -12,9 +12,13 @@ const height = 650;
 Promise.all([
   d3.json("assets/maps/historic-range-1.geojson"),
   d3.json("assets/maps/historic-range-2.geojson")
-]).then(([range1, range2]) => {
+])
+.then(([range1, range2]) => {
 
-  // Combine both downloaded files into one FeatureCollection
+  console.log("Range 1:", range1);
+  console.log("Range 2:", range2);
+
+  // Combine both files into one FeatureCollection
   const historicRange = {
     type: "FeatureCollection",
     features: [
@@ -22,6 +26,9 @@ Promise.all([
       ...range2.features
     ]
   };
+
+  console.log("Feature count:", historicRange.features.length);
+  console.log("Bounds:", d3.geoBounds(historicRange));
 
 
   // Geographic projection
@@ -33,95 +40,63 @@ Promise.all([
     );
 
 
-  // Converts geographic coordinates into SVG paths
+  // Convert geographic coordinates to SVG paths
   const path = d3.geoPath()
     .projection(projection);
 
 
-  // Draw the wolf range
+  // Draw the historic wolf range
   svg
     .selectAll(".historic-range")
     .data(historicRange.features)
     .join("path")
     .attr("class", "historic-range")
-    .attr("d", path);
+    .attr("d", path)
+    .attr("fill", "red")
+    .attr("fill-opacity", 0.7)
+    .attr("stroke", "black")
+    .attr("stroke-width", 2);
 
+})
+.catch(error => {
+  console.error("MAP ERROR:", error);
 });
 
+
 // =========================================================
-// GRAY WOLF CASE STUDY
-// Scroll-driven interactions
+// SCROLL-DRIVEN INTERACTIONS
 // =========================================================
 
-
-// Create the Scrollama instance
 const scroller = scrollama();
 
-
-// Select our page elements
 const steps = document.querySelectorAll(".step");
-const mapStates = document.querySelectorAll(".map-state");
 
-
-// ---------------------------------------------------------
-// Change the graphic when a step becomes active
-// ---------------------------------------------------------
 
 function handleStepEnter(response) {
 
-  // Which step are we currently on?
-  const currentStep = response.index;
-
-
-  // Remove active state from all text steps
+  // Remove highlight from all steps
   steps.forEach(step => {
     step.classList.remove("is-active");
   });
 
-
-  // Highlight the active text step
+  // Highlight current step
   response.element.classList.add("is-active");
 
-
-  // Hide all graphic states
-  mapStates.forEach(state => {
-    state.classList.remove("active");
-  });
-
-
-  // Show the graphic state corresponding to this step
-  const activeState = document.querySelector(
-    `.map-state[data-state="${currentStep}"]`
-  );
-
-  if (activeState) {
-    activeState.classList.add("active");
-  }
-
+  console.log("Current step:", response.index);
 }
 
 
-// ---------------------------------------------------------
 // Initialize Scrollama
-// ---------------------------------------------------------
-
 scroller
   .setup({
     step: "#range-scrolly .step",
-
-    // Trigger when the step reaches approximately
-    // the middle of the screen
     offset: 0.55,
-
     debug: false
   })
   .onStepEnter(handleStepEnter);
 
 
-// ---------------------------------------------------------
-// Recalculate positions if browser size changes
-// ---------------------------------------------------------
-
+// Recalculate positions when browser size changes
 window.addEventListener("resize", () => {
   scroller.resize();
 });
