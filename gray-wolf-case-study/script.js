@@ -1,6 +1,30 @@
 // =========================================================
 // WOLF MAP
 // =========================================================
+function rewindGeoJSON(featureCollection) {
+
+  function reversePolygonCoordinates(coords) {
+    return coords.map(ring => [...ring].reverse());
+  }
+
+  featureCollection.features.forEach(feature => {
+
+    if (feature.geometry.type === "Polygon") {
+      feature.geometry.coordinates =
+        reversePolygonCoordinates(feature.geometry.coordinates);
+    }
+
+    if (feature.geometry.type === "MultiPolygon") {
+      feature.geometry.coordinates =
+        feature.geometry.coordinates.map(polygon =>
+          reversePolygonCoordinates(polygon)
+        );
+    }
+
+  });
+
+  return featureCollection;
+}
 
 const svg = d3.select("#wolf-map");
 
@@ -48,8 +72,8 @@ Promise.all([
       ...range2.features
     ]
   };
-
-
+  
+  rewindGeoJSON(historicRange);
   // -------------------------------------------------------
   // PROJECTION
   // -------------------------------------------------------
