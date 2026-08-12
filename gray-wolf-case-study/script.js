@@ -10,8 +10,8 @@ const height = 650;
 
 // Load the two historic-range features
 Promise.all([
-  d3.json("assets/maps/historic-range_obj1.geojson"),
-  d3.json("assets/maps/historic-range_obj2.geojson")
+  d3.json("assets/maps/historic-range-1.geojson"),
+  d3.json("assets/maps/historic-range-2.geojson")
 ]).then(([range1, range2]) => {
 
   // Combine both downloaded files into one FeatureCollection
