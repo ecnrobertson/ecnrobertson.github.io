@@ -8,17 +8,39 @@ const width = 900;
 const height = 650;
 
 
-// Load the two historic-range features
+// Load basemap + historic wolf range
 Promise.all([
-  d3.json("assets/maps/historic-range-1.geojson"),
-  d3.json("assets/maps/historic-range-2.geojson")
+
+  d3.json(
+    "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json"
+  ),
+
+  d3.json(
+    "assets/maps/historic-range-1.geojson"
+  ),
+
+  d3.json(
+    "assets/maps/historic-range-2.geojson"
+  )
+
 ])
-.then(([range1, range2]) => {
+.then(([world, range1, range2]) => {
 
-  console.log("Range 1:", range1);
-  console.log("Range 2:", range2);
 
-  // Combine both files into one FeatureCollection
+  // -------------------------------------------------------
+  // BASEMAP
+  // -------------------------------------------------------
+
+  const countries = topojson.feature(
+    world,
+    world.objects.countries
+  );
+
+
+  // -------------------------------------------------------
+  // HISTORIC WOLF RANGE
+  // -------------------------------------------------------
+
   const historicRange = {
     type: "FeatureCollection",
     features: [
@@ -27,39 +49,59 @@ Promise.all([
     ]
   };
 
-  console.log("Feature count:", historicRange.features.length);
-  console.log("Bounds:", d3.geoBounds(historicRange));
 
+  // -------------------------------------------------------
+  // PROJECTION
+  // -------------------------------------------------------
 
-  // Geographic projection
   const projection = d3
     .geoAlbers()
+    .center([0, 45])
+    .rotate([100, 0])
+    .parallels([30, 60])
     .fitExtent(
-      [[30, 30], [width - 30, height - 30]],
+      [[25, 25], [width - 25, height - 25]],
       historicRange
     );
 
 
-  // Convert geographic coordinates to SVG paths
   const path = d3.geoPath()
     .projection(projection);
 
 
-  // Draw the historic wolf range
+  // -------------------------------------------------------
+  // DRAW BASEMAP
+  // -------------------------------------------------------
+
   svg
-    .selectAll(".historic-range")
+    .append("g")
+    .attr("class", "basemap-layer")
+    .selectAll("path")
+    .data(countries.features)
+    .join("path")
+    .attr("d", path)
+    .attr("class", "country");
+
+
+  // -------------------------------------------------------
+  // DRAW HISTORIC WOLF RANGE
+  // -------------------------------------------------------
+
+  svg
+    .append("g")
+    .attr("class", "historic-range-layer")
+    .selectAll("path")
     .data(historicRange.features)
     .join("path")
-    .attr("class", "historic-range")
     .attr("d", path)
-    .attr("fill", "red")
-    .attr("fill-opacity", 0.7)
-    .attr("stroke", "black")
-    .attr("stroke-width", 2);
+    .attr("class", "historic-range");
+
 
 })
 .catch(error => {
+
   console.error("MAP ERROR:", error);
+
 });
 
 

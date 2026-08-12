@@ -323,3 +323,16 @@ body {
 #map-label h2 {
   margin: 0.3rem 0 0;
 }
+
+.country {
+  fill: #ece9e1;
+  stroke: #b8b4aa;
+  stroke-width: 0.6;
+}
+
+.historic-range {
+  fill: #66705b;
+  fill-opacity: 0.7;
+  stroke: #49503f;
+  stroke-width: 1;
+}
