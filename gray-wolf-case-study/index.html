@@ -76,7 +76,7 @@
 
 
   <!-- =========================================================
-       SCROLLYTELLING SECTION 1
+       SCROLLYTELLING SECTION 1: historical to 1960's
        ========================================================= -->
 
   <section id="range-scrolly" class="scrolly">
@@ -180,46 +180,514 @@
 
   </section>
 
-
-  <!-- =========================================================
-       TRANSITION INTO NEXT ACT
+<!-- =========================================================
+       SCROLLYTELLING SECTION 2: listing status
        ========================================================= -->
+<section id="listing-transition">
 
-  <section class="story-transition">
+  <div class="listing-sticky">
 
-    <p class="section-label">A new question</p>
+    <div class="listing-heading">
+      <h2>Federal protection begins</h2>
+    </div>
+
+    <div id="wolf-listing-cards">
+
+     <div class="wolf-listing-card timber">
+      <img
+        src="assets/images/Timber-wolf.jpg"
+        alt="Illustration of a timber wolf"
+        class="wolf-illustration"
+      >
+      <h3>Timber wolf</h3>
+      <p>1967</p>
+    </div>
+
+      <div class="wolf-listing-card rocky">
+      <img
+        src="assets/images/RM-wolf.jpg"
+        alt="Illustration of a timber wolf"
+        class="wolf-illustration"
+      >
+      <h3>Rocky Mountain wolf</h3>
+      <p>1973</p>
+    </div>
+
+      <div class="wolf-listing-card mexican">
+      <img
+        src="assets/images/Mexican-wolf.jpg"
+        alt="Illustration of a timber wolf"
+        class="wolf-illustration"
+      >
+      <h3>Mexican wolf</h3>
+      <p>1976</p>
+    </div>
+
+      <div class="wolf-listing-card texas">
+      <img
+        src="assets/images/Texas-wolf.jpg"
+        alt="Illustration of a timber wolf"
+        class="wolf-illustration"
+      >
+     <h3>Texas wolf</h3>
+     <p>1976</p>
+    </div>
+
+    </div>
+
+    <div id="combined-listing-card">
+      <p class="listing-year">1978</p>
+      <h2>Gray wolf</h2>
+
+      <p>
+        Endangered throughout the lower 48,
+        except Minnesota
+      </p>
+
+      <p>
+        Minnesota: Threatened
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="listing-scroll-steps">
+
+    <div class="listing-step" data-listing-step="0">
+      <div class="listing-step-box">
+        <p>
+        Wolves were initially listed separately under federal endangered
+        species protections.
+        </p>
+      </div>
+    </div>
+
+    <div class="listing-step" data-listing-step="1">
+        <div class="listing-step-box">
+          <p>
+          With passage of the Endangered Species Act, these separate protections
+          were eventually reorganized into a broader gray wolf listing.
+          </p>
+        </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+       SCROLLYTELLING SECTION 3: reintroductions and recovery
+     ====================================================== -->
+
+<section id="recovery-transition">
+
+  <div class="recovery-header">
+    <p class="section-label">From protection to recovery</p>
+    <h2 id="recovery-title">Recovery begins</h2>
+  </div>
+
+
+  <div class="recovery-scrolly">
+
+    <!-- LEFT: sticky map -->
+
+    <div class="recovery-sticky">
+
+      <div id="recovery-map-container">
+
+        <svg
+          id="recovery-map"
+          viewBox="0 0 900 650"
+          preserveAspectRatio="xMidYMid meet"
+        ></svg>
+
+        <div id="recovery-note">
+          Recovery locations shown schematically
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT: scrolling text -->
+
+    <div class="recovery-scroll-steps">
+
+      <div class="recovery-step" data-recovery-step="0">
+
+        <div class="recovery-step-box">
+          <p>
+            Federal protection shifted the goal from preventing extinction
+            toward recovering viable wolf populations.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="recovery-step" data-recovery-step="1">
+
+        <div class="recovery-step-box">
+          <p>
+            In the 1990s, wolves were reintroduced in Yellowstone and
+            central Idaho, accelerating recovery in the Northern Rockies.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="recovery-step" data-recovery-step="2">
+
+        <div class="recovery-step-box">
+          <p>
+            Wolf populations grew and expanded beyond the original recovery
+            areas.
+          </p>
+        </div>
+        
+      </div>
+        
+      <div class="recovery-step" data-recovery-step="3">
+        <div class="recovery-step-box">
+          <p>
+           Wolves now occupy substantially more of the lower 48 than they did
+          at their mid-twentieth-century low. Recovery success shifted the
+          debate from how to save wolves to where federal protection should end.
+        </p>
+      </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+       SCROLLYTELLING SECTION 4: complex timeline
+     ====================================================== -->
+<section id="delisting-timeline">
+
+  <div class="delisting-sticky">
+    <div class="delisting-visual">
+
+      <div class="delisting-heading">
+        <h2 id="delisting-title">Recovery creates a new problem</h2>
+      </div>
+
+      <div id="delisting-board">
+
+        <div class="timeline-legend">
+          <span class="legend-pill fws">FWS rule</span>
+          <span class="legend-pill court">Court</span>
+          <span class="legend-pill congress">Congress</span>
+          <span class="legend-pill state">State management</span>
+        </div>
+
+        <div class="timeline-spine"></div>
+
+        <div class="timeline-event event-a top" data-show-step="0">
+          <span class="event-actor fws">FWS</span>
+          <p class="event-year">2003</p>
+          <p class="event-text">
+            DPSs created; major wolf populations reclassified
+          </p>
+        </div>
+
+        <div class="timeline-event event-b bottom" data-show-step="1">
+          <span class="event-actor court">Court</span>
+          <p class="event-year">2005</p>
+          <p class="event-text">
+            Courts vacate the 2003 approach
+          </p>
+        </div>
+
+        <div class="timeline-event event-c top" data-show-step="1">
+          <span class="event-actor fws">FWS</span>
+          <p class="event-year">2007–08</p>
+          <p class="event-text">
+            Great Lakes and Northern Rockies delisted
+          </p>
+        </div>
+
+        <div class="timeline-event event-d bottom" data-show-step="2">
+          <span class="event-actor court">Court</span>
+          <p class="event-year">2008–10</p>
+          <p class="event-text">
+            Litigation restores protections
+          </p>
+        </div>
+
+        <div class="timeline-event event-e top" data-show-step="2">
+          <span class="event-actor congress">Congress</span>
+          <p class="event-year">2011</p>
+          <p class="event-text">
+            Northern Rockies delisting reinstated except Wyoming
+          </p>
+        </div>
+
+        <div class="timeline-event event-f bottom" data-show-step="3">
+          <span class="event-actor state">Wyoming</span>
+          <p class="event-year">2012–17</p>
+          <p class="event-text">
+            Delisted → relisted → delisted again
+          </p>
+        </div>
+
+        <div class="timeline-event event-g top" data-show-step="4">
+          <span class="event-actor fws">FWS</span>
+          <p class="event-year">2020</p>
+          <p class="event-text">
+            Lower 48 delisted except the Mexican wolf
+          </p>
+        </div>
+
+        <div id="timeline-stat" data-show-step="3">
+          <strong>16</strong>
+          <span>status changes<br>2007–2017</span>
+        </div>
+
+        <div id="delisting-big-question" data-show-step="4">
+          <p class="section-label">Core question</p>
+          <h3>What now?</h3>
+          <p>
+            At this point, the debate is no longer whether or not wolves have recovered
+            anywhere, it is how ESA protection should be applied across
+            different regions.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="timeline-questions">
+        <div class="timeline-question" data-show-step="2">
+          What counts as a listable population?
+        </div>
+
+        <div class="timeline-question" data-show-step="3">
+          What is a “significant portion” of a species’ range?
+        </div>
+
+        <div class="timeline-question" data-show-step="3">
+          Are state management plans adequate after delisting?
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="delisting-scroll-steps">
+
+    <div class="delisting-step" data-delisting-step="0">
+      <div class="delisting-step-box">
+        <p>
+          By the early 2000s, wolf recovery had created a new challenge.
+          The question was no longer only how to protect wolves, but whether
+          federal protections should be reduced in places where recovery goals
+          seemed to be met.
+        </p>
+      </div>
+    </div>
+
+    <div class="delisting-step" data-delisting-step="1">
+      <div class="delisting-step-box">
+        <p>
+          In 2003, FWS tried a broad legal reorganization, creating distinct
+          population segments and reducing protections for some populations.
+          Courts rejected that first attempt, showing that the legal geography
+          of wolf recovery would be heavily contested.
+        </p>
+      </div>
+    </div>
+
+    <div class="delisting-step" data-delisting-step="2">
+      <div class="delisting-step-box">
+        <p>
+          FWS tried again in 2007 and 2008, delisting wolves in the Western
+          Great Lakes and Northern Rocky Mountains. Litigation followed almost
+          immediately, and protections were restored as courts reviewed the
+          agency’s logic and boundaries.
+        </p>
+      </div>
+    </div>
+
+    <div class="delisting-step" data-delisting-step="3">
+      <div class="delisting-step-box">
+        <p>
+          The story then became even more tangled. Congress intervened in the
+          Northern Rockies, and Wyoming’s status bounced back and forth as
+          courts weighed whether state management was strong enough to sustain
+          recovery after federal protections were removed.
+        </p>
+      </div>
+    </div>
+
+    <div class="delisting-step" data-delisting-step="4">
+      <div class="delisting-step-box">
+        <p>
+          By 2020, FWS moved to delist gray wolves across the lower 48 except
+          the Mexican wolf. At this stage, the central debate had shifted:
+          if wolves are recovered in some places but not others, where should
+          federal protection end?
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+       POSING THE PROBLEM: what do you do?
+     ====================================================== -->
+<section id="decision-break">
+
+  <div class="decision-inner">
+
+    <p class="decision-kicker">
+      YOUR DECISION
+    </p>
 
     <h2>
-      When wolves became one of America's disappearing species,
-      what exactly should the federal government protect?
+      Gray wolves have recovered substantially
+      in portions of their former U.S. range.
     </h2>
 
-    <p>
-      The answer was more complicated than simply listing
-      <em>Canis lupus</em>.
+    <p class="decision-context">
+      The U.S. Fish and Wildlife Service proposes removing
+      federal Endangered Species Act protections from a population.
     </p>
 
-  </section>
+    <div class="decision-question">
+      <p>Should FWS delist it?</p>
+    </div>
+
+    <div class="decision-followup">
+      <p>
+        What information should determine that decision?
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ======================================================
+       POSING THE PROBLEM: stakeholders
+     ====================================================== -->
+<section id="stakeholder-section">
+
+  <div class="stakeholder-intro">
+    <p class="section-label">Stakeholder briefing</p>
+    <h2>Choose a perspective</h2>
+    <p>
+      Each group receives the same core evidence, but evaluates the delisting
+      decision from a different institutional or social position.
+    </p>
+  </div>
+
+  <div class="stakeholder-grid">
+
+    <button class="stakeholder-card" data-stakeholder="fws">
+      <span class="stakeholder-card-label">Federal agency</span>
+
+      <h3>U.S. Fish & Wildlife Service</h3>
+
+      <ul>
+        <li>ESA requirements</li>
+        <li>Population viability</li>
+        <li>Current and future threats</li>
+      </ul>
+
+      <span class="stakeholder-open">
+        OPEN CASE FILE →
+      </span>
+    </button>
 
 
-  <!-- =========================================================
-       TEMPORARY NEXT SECTION
+    <button class="stakeholder-card" data-stakeholder="state">
+      <span class="stakeholder-card-label">State agency</span>
+
+      <h3>State Wildlife Agency</h3>
+
+      <ul>
+        <li>State authority</li>
+        <li>Management goals</li>
+        <li>Regulatory flexibility</li>
+      </ul>
+
+      <span class="stakeholder-open">
+        OPEN CASE FILE →
+      </span>
+    </button>
+
+
+    <button class="stakeholder-card" data-stakeholder="conservation">
+      <span class="stakeholder-card-label">Advocacy & science</span>
+
+      <h3>Conservation Organization</h3>
+
+      <ul>
+        <li>Population connectivity</li>
+        <li>Long-term viability</li>
+        <li>Post-delisting protections</li>
+      </ul>
+
+      <span class="stakeholder-open">
+        OPEN CASE FILE →
+      </span>
+    </button>
+
+
+    <button class="stakeholder-card" data-stakeholder="local">
+      <span class="stakeholder-card-label">Local interests</span>
+
+      <h3>Ranching, Hunting & Local Communities</h3>
+
+      <ul>
+        <li>Livestock depredation</li>
+        <li>Management impacts</li>
+        <li>Local control</li>
+      </ul>
+
+      <span class="stakeholder-open">
+        OPEN CASE FILE →
+      </span>
+    </button>
+
+  </div>
+
+<!-- =========================================================
+       MODAL
        ========================================================= -->
+</section>
 
-  <section class="coming-next">
+<div id="stakeholder-modal" aria-hidden="true">
 
-    <p class="section-label">Next</p>
+  <div class="stakeholder-modal-backdrop"></div>
 
-    <h2>Federal protection</h2>
+  <div class="stakeholder-case-file">
 
-    <p>
-      This is where we will build the subspecies and ESA-listing sequence.
-    </p>
+    <button
+      id="stakeholder-modal-close"
+      aria-label="Close stakeholder case file"
+    >
+      ×
+    </button>
 
-  </section>
+    <div id="stakeholder-modal-content">
+      <!-- Filled by JavaScript -->
+    </div>
 
+  </div>
 
-  <!-- =========================================================
+</div>
+<!-- =========================================================
        JAVASCRIPT LIBRARIES
        Order matters:
        D3 → Scrollama → our script
