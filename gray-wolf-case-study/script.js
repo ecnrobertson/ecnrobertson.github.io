@@ -1617,64 +1617,177 @@ const stakeholderFiles = {
   fws: {
     kicker: "Federal agency case file",
     title: "U.S. Fish & Wildlife Service",
+
+    sharedPacket:
+      "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
+
     role:
-      "You are responsible for determining whether this wolf population still meets the Endangered Species Act definition of endangered or threatened.",
-    priorities: [
-      "Apply the ESA listing and delisting criteria",
-      "Use the best available scientific and commercial data",
-      "Evaluate current and foreseeable threats",
-      "Consider whether existing regulatory mechanisms are adequate"
+      "You are part of the FWS team responsible for deciding whether western gray wolves should remain protected under the Endangered Species Act. Your job is not to argue for or against wolves. Your recommendation must be supported by the best available scientific and commercial data and be defensible under the ESA.",
+
+    considerations: [
+      "What population should FWS evaluate? Is it a valid species, subspecies, or distinct population segment (DPS)?",
+      "Does the population currently meet the ESA definition of endangered or threatened?",
+      "Which current or foreseeable threats matter most?",
+      "If federal protections are removed, are state and Tribal management systems adequate to maintain the population?",
+      "How should FWS weigh strong current abundance and connectivity against uncertainty about future mortality, range recovery, and long-term genetic health?"
+    ],
+
+    pressures: [
+      "State officials may push for greater management authority and argue that wolves have exceeded recovery goals.",
+      "Conservation organizations may argue that delisting is premature because of mortality, incomplete range recovery, genetics, or weak state protections.",
+      "Members of Congress may publicly advocate for listing or delisting and can influence the broader political environment through oversight, appropriations, or legislation.",
+      "Public comments can create substantial political pressure, but the ESA status decision is not determined by which position is most popular."
+    ],
+
+    task: [
+      "Recommend whether FWS should delist the population, retain federal protection, or conclude that additional information is needed.",
+      "Identify your strongest scientific evidence.",
+      "Identify the strongest argument against your recommendation.",
+      "Identify one politically important concern that should not itself determine the ESA finding."
     ]
   },
+
 
   state: {
-    kicker: "State agency case file",
-    title: "State Wildlife Agency",
-    role:
-      "You will assume primary responsibility for wolf management if federal ESA protections are removed.",
-    priorities: [
-      "Maintain a viable wolf population",
-      "Respond to livestock and wildlife-management conflicts",
-      "Retain flexibility in management decisions",
-      "Demonstrate that state regulations can sustain recovery"
-    ]
-  },
+  kicker: "State agency case file",
+  title: "State Wildlife Agency",
+
+  sharedPacket:
+    "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
+
+  role:
+    "You work for a western state wildlife agency responsible for managing wolves alongside other wildlife, livestock interests, hunters, landowners, and local communities. If federal ESA protections are removed, your agency will assume greater responsibility for monitoring wolf populations and setting management rules. Your goal is to maintain a viable wolf population while retaining enough flexibility to respond to conflicts and meet state wildlife-management objectives.",
+
+  considerations: [
+    "Are wolf populations within your state large and stable enough to be managed without federal ESA protection?",
+    "Can your agency maintain wolves above recovery thresholds while still allowing management actions such as hunting, trapping, or lethal removal of conflict animals?",
+    "How much flexibility should states have to reduce wolf numbers in areas with livestock conflict or concerns about impacts on wild ungulates?",
+    "What monitoring and population safeguards should remain in place after delisting?",
+    "How should your state coordinate with neighboring states, Tribes, and federal land managers when wolves regularly cross jurisdictional boundaries?"
+  ],
+
+  pressures: [
+    "Ranchers and some local communities may demand faster or more aggressive responses to livestock depredation.",
+    "Hunters and elected officials may pressure the agency to reduce wolf numbers where wolves are perceived to affect elk, deer, or other game populations.",
+    "Conservation groups may challenge state rules if they believe harvest or control measures threaten long-term population viability or connectivity.",
+    "State officials may argue that continued federal protection limits the state's ability to manage a species that has already exceeded federal recovery goals."
+  ],
+
+  task: [
+    "Decide whether your agency supports or opposes removing federal ESA protections.",
+    "Identify the strongest biological evidence supporting your position.",
+    "Describe the management safeguards your state should maintain after delisting.",
+    "Identify one conflict where additional state management flexibility would be useful.",
+    "Identify one concern raised by another stakeholder that your agency should take seriously."
+  ]
+},
+
 
   conservation: {
-    kicker: "Conservation case file",
-    title: "Conservation Organization",
-    role:
-      "You are evaluating whether delisting would maintain a recovered and resilient wolf population over the long term.",
-    priorities: [
-      "Maintain population connectivity",
-      "Protect long-term genetic and demographic viability",
-      "Consider remaining unoccupied habitat and range",
-      "Evaluate the strength of post-delisting protections"
-    ]
-  },
+  kicker: "Conservation organization case file",
+  title: "Conservation Organization",
+
+  sharedPacket:
+    "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
+
+  role:
+    "You represent a conservation organization working to ensure that gray wolf recovery is durable over the long term. You recognize that wolf abundance has increased dramatically, but you are concerned that population numbers alone may not capture genetic health, connectivity, geographic recovery, or the effects of future state management. Your role is to evaluate whether removing federal protections could place that recovery at risk.",
+
+  considerations: [
+    "Do current wolf numbers demonstrate long-term recovery, or mainly short-term demographic security?",
+    "Are wolf populations sufficiently connected to maintain genetic diversity and allow dispersal among recovery areas?",
+    "How much should the continued absence of wolves from large portions of their historical and potentially suitable range matter when evaluating recovery?",
+    "Could increased hunting, trapping, lethal control, or other state management actions substantially reduce population size or connectivity after delisting?",
+    "Are existing state management plans and regulatory safeguards strong enough to prevent future declines without federal ESA protections?"
+  ],
+
+  pressures: [
+    "Conservation organizations face pressure from members and supporters who may favor broad wolf restoration, even though the ESA decision must ultimately be tied to statutory criteria and scientific evidence.",
+    "Litigation is one tool available to conservation organizations when they believe FWS has failed to use the best available science or adequately evaluate threats."
+  ],
+
+  task: [
+    "Decide whether you support or oppose removing federal ESA protections.",
+    "Identify the strongest scientific evidence supporting your position.",
+    "Identify the greatest long-term risk you believe could be underestimated by a population-count-based recovery assessment.",
+    "Explain what additional safeguards or recovery evidence would make you comfortable with delisting.",
+    "Identify one argument commonly made in favor of wolf protection that is important socially or ecologically but may not, by itself, determine ESA listing status."
+  ]
+},
+
 
   local: {
-    kicker: "Local interests case file",
-    title: "Ranching, Hunting & Local Communities",
-    role:
-      "You live and work in areas where wolves and people share the landscape and are concerned with the practical consequences of wolf management.",
-    priorities: [
-      "Livestock depredation and economic impacts",
-      "Effects on hunted wildlife populations",
-      "Management responsiveness",
-      "Local and state authority over wildlife decisions"
-    ]
-  }
+  kicker: "Local community case file",
+  title: "Ranching, Hunting & Local Communities",
+
+  sharedPacket:
+    "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
+
+  role:
+    "You represent people who live and work in areas occupied by wolves, including livestock producers, hunters, rural residents, and local community members. You may support maintaining wolves on the landscape while also believing that the costs and management consequences of recovery fall disproportionately on people living closest to them. Your priority is a management system that protects viable wolf populations while allowing timely responses to local conflicts.",
+
+  considerations: [
+    "How should livestock losses and other costs of living with wolves be weighed when deciding who should manage recovered populations?",
+    "Are compensation programs and non-lethal conflict-prevention tools sufficient, accessible, and practical for livestock producers?",
+    "Should managers have greater flexibility to remove individual wolves or packs that repeatedly kill livestock?",
+    "How should concerns about wolves, elk, deer, and hunting opportunities factor into state wildlife management after delisting?",
+    "If wolf populations remain well above recovery thresholds, should local and state managers have greater authority to determine acceptable population levels?"
+  ],
+
+  pressures: [
+    "Livestock producers may experience direct losses from depredation as well as added costs for monitoring, fencing, range riders, carcass removal, and other prevention measures.",
+    "Compensation programs can offset confirmed livestock losses, but producers may view them as incomplete if they do not cover indirect losses, added labor, or animals that cannot be verified as wolf kills.",
+    "Hunters and outfitters may be concerned about effects of wolf predation on locally important elk or deer populations, even when wolves are not the only factor affecting those herds.",
+    "Many people outside wolf range strongly support wolf conservation, which can create frustration when communities living with wolves perceive that they bear more of the costs while having less influence over management."
+  ],
+
+  task: [
+    "Decide whether you support or oppose removing federal ESA protections.",
+    "Identify the strongest scientific evidence supporting your position.",
+    "Identify the most important economic or social concern for people living with wolves.",
+    "Describe one management tool or safeguard you would want in place after delisting.",
+    "Identify one concern from conservation advocates that your group believes should still be taken seriously."
+  ]
+}
 
 };
 
 
 function openStakeholderFile(stakeholder) {
 
-  const file =
-    stakeholderFiles[stakeholder];
+  const file = stakeholderFiles[stakeholder];
 
   if (!file) return;
+
+
+  const considerationsHTML =
+    file.considerations
+      .map(item => `<li>${item}</li>`)
+      .join("");
+
+
+  const pressuresHTML =
+    file.pressures && file.pressures.length
+      ? `
+        <div class="case-file-section">
+
+          <h3>External pressures</h3>
+
+          <ul>
+            ${file.pressures
+              .map(item => `<li>${item}</li>`)
+              .join("")}
+          </ul>
+
+        </div>
+      `
+      : "";
+
+
+  const taskHTML =
+    file.task
+      .map(item => `<li>${item}</li>`)
+      .join("");
 
 
   stakeholderModalContent.innerHTML = `
@@ -1686,6 +1799,17 @@ function openStakeholderFile(stakeholder) {
     <h2>
       ${file.title}
     </h2>
+
+
+    <a
+      class="shared-packet-link"
+      href="${file.sharedPacket}"
+      target="_blank"
+      rel="noopener"
+    >
+      DOWNLOAD SHARED EVIDENCE PACKET →
+    </a>
+
 
     <div class="case-file-section">
 
@@ -1700,25 +1824,25 @@ function openStakeholderFile(stakeholder) {
 
     <div class="case-file-section">
 
-      <h3>Your priorities</h3>
+      <h3>Key considerations</h3>
 
       <ul>
-        ${file.priorities
-          .map(priority => `<li>${priority}</li>`)
-          .join("")}
+        ${considerationsHTML}
       </ul>
 
     </div>
+
+
+    ${pressuresHTML}
 
 
     <div class="case-file-section">
 
       <h3>Your task</h3>
 
-      <p>
-        Review the evidence and decide whether you support or oppose
-        removing federal ESA protections.
-      </p>
+      <ul>
+        ${taskHTML}
+      </ul>
 
     </div>
 
