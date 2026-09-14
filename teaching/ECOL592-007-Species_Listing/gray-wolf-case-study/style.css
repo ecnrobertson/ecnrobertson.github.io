@@ -1454,7 +1454,7 @@ body {
 
 
 .stakeholder-grid {
-  width: min(1100px, 94vw);
+  width: min(1000px, 94vw);
   margin: 0 auto;
 
   display: grid;
@@ -1729,12 +1729,6 @@ body {
 
 .stakeholder-outro {
   max-width: 760px;
-  margin: 0 auto 3rem;
-  text-align: center;
-}
-
-.stakeholder-outro {
-  max-width: 760px;
   margin: 5rem auto 3rem;
   text-align: center;
 }
@@ -1754,7 +1748,78 @@ body {
   line-height: 1.6;
   color: #575a53;
 }
+.case-file-sources {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
 
+.case-file-source {
+  padding: 1.4rem;
+
+  background: rgba(255, 255, 255, 0.42);
+
+  border: 1px solid #cbc6b8;
+  border-radius: 10px;
+}
+
+.case-file-source-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.case-file-source h4 {
+  margin: 0;
+
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.source-citation {
+  margin: 0.4rem 0 1rem;
+
+  color: #687062;
+
+  font-size: 0.92rem !important;
+}
+
+.source-pages,
+.source-prompt {
+  margin: 0.8rem 0;
+}
+
+.source-optional {
+  flex-shrink: 0;
+
+  padding: 0.25rem 0.55rem;
+
+  background: #d9dfd2;
+  border-radius: 999px;
+
+  color: #4d5749;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-file-source-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+
+  color: #44533f;
+
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.case-file-source-link:hover {
+  color: #1f2a1d;
+}
 /* =========================================================
    CASE CONCLUSION
    ========================================================= */

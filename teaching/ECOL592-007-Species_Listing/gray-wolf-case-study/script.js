@@ -1602,16 +1602,6 @@ if (delistingSection) {
 // STAKEHOLDER CASE FILES
 // =========================================================
 
-const stakeholderModal =
-  document.querySelector("#stakeholder-modal");
-
-const stakeholderModalContent =
-  document.querySelector("#stakeholder-modal-content");
-
-const stakeholderModalClose =
-  document.querySelector("#stakeholder-modal-close");
-
-
 const stakeholderFiles = {
 
   state: {
@@ -1880,170 +1870,296 @@ const stakeholderFiles = {
 };
 
 
-function openStakeholderFile(stakeholder) {
+const stakeholderModal = document.getElementById("stakeholder-modal");
+const stakeholderModalContent = document.getElementById(
+  "stakeholder-modal-content"
+);
+const stakeholderModalClose = document.getElementById(
+  "stakeholder-modal-close"
+);
+const stakeholderModalBackdrop = stakeholderModal?.querySelector(
+  ".stakeholder-modal-backdrop"
+);
 
-  const file = stakeholderFiles[stakeholder];
+function createList(items, listType = "ul") {
+  if (!Array.isArray(items) || items.length === 0) {
+    return "";
+  }
 
-  if (!file) return;
+  return `
+    <${listType}>
+      ${items.map(item => `<li>${item}</li>`).join("")}
+    </${listType}>
+  `;
+}
 
 
-  const considerationsHTML =
-    file.considerations
-      .map(item => `<li>${item}</li>`)
-      .join("");
+
+function createPrimarySourcesSection(data) {
 
 
-  const pressuresHTML =
-    file.pressures && file.pressures.length
-      ? `
-        <div class="case-file-section">
+  const sources = data.primarySources || data.sources || [];
 
-          <h3>External pressures</h3>
+  if (!Array.isArray(sources) || sources.length === 0) {
+    return "";
+  }
 
-          <ul>
-            ${file.pressures
-              .map(item => `<li>${item}</li>`)
-              .join("")}
-          </ul>
+  const sourceCards = sources.map(source => {
+    const sourceURL =
+      source.url ||
+      source.link ||
+      source.href ||
+      "";
 
+    const citation =
+      source.citation ||
+      [
+        source.author,
+        source.organization,
+        source.year || source.date
+      ]
+        .filter(Boolean)
+        .join(" · ");
+
+    const description =
+      source.description ||
+      source.note ||
+      source.about ||
+      "";
+
+    const prompt =
+      source.prompt ||
+      source.question ||
+      "";
+
+    const pages =
+      source.pages ||
+      source.read ||
+      "";
+
+    return `
+      <article class="case-file-source">
+
+        <div class="case-file-source-heading">
+          <h4>${source.title || "Primary source"}</h4>
+
+          ${
+            source.optional
+              ? `<span class="source-optional">Optional</span>`
+              : ""
+          }
         </div>
-      `
-      : "";
+
+        ${
+          citation
+            ? `<p class="source-citation">${citation}</p>`
+            : ""
+        }
+
+        ${
+          pages
+            ? `
+              <p class="source-pages">
+                <strong>Review:</strong> ${pages}
+              </p>
+            `
+            : ""
+        }
+
+        ${
+          description
+            ? `<p>${description}</p>`
+            : ""
+        }
+
+        ${
+          prompt
+            ? `
+              <p class="source-prompt">
+                <strong>As you read:</strong> ${prompt}
+              </p>
+            `
+            : ""
+        }
+
+        ${
+          sourceURL
+            ? `
+              <a
+                class="case-file-source-link"
+                href="${sourceURL}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open source
+              </a>
+            `
+            : ""
+        }
+
+      </article>
+    `;
+  }).join("");
+
+  return `
+    <section class="case-file-section">
+      <h3>Primary sources</h3>
+
+      ${
+        data.sourceIntro
+          ? `<p class="source-intro">${data.sourceIntro}</p>`
+          : ""
+      }
+
+      <div class="case-file-sources">
+        ${sourceCards}
+      </div>
+    </section>
+  `;
+}
 
 
-  const taskHTML =
-    file.task
-      .map(item => `<li>${item}</li>`)
-      .join("");
+function openStakeholderModal(stakeholderKey) {
+  const data = stakeholderFiles[stakeholderKey];
 
+  if (!data) {
+    console.error(
+      `No stakeholder data found for "${stakeholderKey}".`
+    );
+    return;
+  }
+
+  const primarySourcesSection =
+    createPrimarySourcesSection(data);
 
   stakeholderModalContent.innerHTML = `
+    <p class="case-file-kicker">${data.kicker}</p>
 
-    <p class="case-file-kicker">
-      ${file.kicker}
-    </p>
+    <h2>${data.title}</h2>
 
-    <h2>
-      ${file.title}
-    </h2>
-
-
-    <a
-      class="shared-packet-link"
-      href="${file.sharedPacket}"
-      target="_blank"
-      rel="noopener"
-    >
-      DOWNLOAD SHARED EVIDENCE PACKET →
-    </a>
-
-
-    <div class="case-file-section">
-
+    <section class="case-file-section">
       <h3>Your role</h3>
+      <p>${data.role}</p>
+    </section>
 
-      <p>
-        ${file.role}
-      </p>
+    ${
+      data.sharedPacket
+        ? `
+          <section class="case-file-section">
+            <h3>Shared briefing</h3>
 
-    </div>
+            <p>
+              Begin with the shared FWS information before
+              reviewing the sources assigned to your stakeholder.
+            </p>
 
+            <a
+              class="case-file-source-link"
+              href="${data.sharedPacket}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open shared stakeholder packet
+            </a>
+          </section>
+        `
+        : ""
+    }
 
-    <div class="case-file-section">
+    ${primarySourcesSection}
 
-      <h3>Key considerations</h3>
+    ${
+      Array.isArray(data.considerations) &&
+      data.considerations.length > 0
+        ? `
+          <section class="case-file-section">
+            <h3>Questions to consider</h3>
+            ${createList(data.considerations)}
+          </section>
+        `
+        : ""
+    }
 
-      <ul>
-        ${considerationsHTML}
-      </ul>
+    ${
+      Array.isArray(data.pressures) &&
+      data.pressures.length > 0
+        ? `
+          <section class="case-file-section">
+            <h3>Stakeholder pressures</h3>
+            ${createList(data.pressures)}
+          </section>
+        `
+        : ""
+    }
 
-    </div>
-
-
-    ${pressuresHTML}
-
-
-    <div class="case-file-section">
-
-      <h3>Your task</h3>
-
-      <ul>
-        ${taskHTML}
-      </ul>
-
-    </div>
-
+    ${
+      Array.isArray(data.task) &&
+      data.task.length > 0
+        ? `
+          <section class="case-file-section">
+            <h3>Your task</h3>
+            ${createList(data.task, "ol")}
+          </section>
+        `
+        : ""
+    }
   `;
 
-
   stakeholderModal.classList.add("is-open");
-
-  stakeholderModal.setAttribute(
-    "aria-hidden",
-    "false"
-  );
+  stakeholderModal.setAttribute("aria-hidden", "false");
 
   document.body.style.overflow = "hidden";
 
+  stakeholderModalClose?.focus();
 }
 
 
-function closeStakeholderFile() {
+/* Close the stakeholder case file */
 
+function closeStakeholderModal() {
   stakeholderModal.classList.remove("is-open");
-
-  stakeholderModal.setAttribute(
-    "aria-hidden",
-    "true"
-  );
+  stakeholderModal.setAttribute("aria-hidden", "true");
 
   document.body.style.overflow = "";
-
 }
 
 
-document
-  .querySelectorAll(".stakeholder-card")
-  .forEach(card => {
+/* Open the correct case file when a card is clicked */
 
-    card.addEventListener("click", () => {
-
-      openStakeholderFile(
-        card.dataset.stakeholder
-      );
-
-    });
-
+document.querySelectorAll("[data-stakeholder]").forEach(card => {
+  card.addEventListener("click", () => {
+    const stakeholderKey = card.dataset.stakeholder;
+    openStakeholderModal(stakeholderKey);
   });
+});
 
 
-stakeholderModalClose.addEventListener(
+/* Close-button behavior */
+
+stakeholderModalClose?.addEventListener(
   "click",
-  closeStakeholderFile
+  closeStakeholderModal
 );
 
 
-stakeholderModal
-  .querySelector(".stakeholder-modal-backdrop")
-  .addEventListener(
-    "click",
-    closeStakeholderFile
-  );
+/* Close when the backdrop is clicked */
+
+stakeholderModalBackdrop?.addEventListener(
+  "click",
+  closeStakeholderModal
+);
 
 
-document.addEventListener(
-  "keydown",
-  event => {
+/* Close when Escape is pressed */
 
-    if (
-      event.key === "Escape" &&
-      stakeholderModal.classList.contains("is-open")
-    ) {
-      closeStakeholderFile();
-    }
-
+document.addEventListener("keydown", event => {
+  if (
+    event.key === "Escape" &&
+    stakeholderModal.classList.contains("is-open")
+  ) {
+    closeStakeholderModal();
   }
-);
+});
 
   // =======================================================
   // ONE RESIZE LISTENER
