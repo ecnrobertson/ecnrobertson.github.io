@@ -1614,76 +1614,82 @@ const stakeholderModalClose =
 
 const stakeholderFiles = {
 
-  fws: {
-    kicker: "Federal agency case file",
-    title: "U.S. Fish & Wildlife Service",
-
-    sharedPacket:
-      "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
-
-    role:
-      "You are part of the FWS team responsible for deciding whether western gray wolves should remain protected under the Endangered Species Act. Your job is not to argue for or against wolves. Your recommendation must be supported by the best available scientific and commercial data and be defensible under the ESA.",
-
-    considerations: [
-      "What population should FWS evaluate? Is it a valid species, subspecies, or distinct population segment (DPS)?",
-      "Does the population currently meet the ESA definition of endangered or threatened?",
-      "Which current or foreseeable threats matter most?",
-      "If federal protections are removed, are state and Tribal management systems adequate to maintain the population?",
-      "How should FWS weigh strong current abundance and connectivity against uncertainty about future mortality, range recovery, and long-term genetic health?"
-    ],
-
-    pressures: [
-      "State officials may push for greater management authority and argue that wolves have exceeded recovery goals.",
-      "Conservation organizations may argue that delisting is premature because of mortality, incomplete range recovery, genetics, or weak state protections.",
-      "Members of Congress may publicly advocate for listing or delisting and can influence the broader political environment through oversight, appropriations, or legislation.",
-      "Public comments can create substantial political pressure, but the ESA status decision is not determined by which position is most popular."
-    ],
-
-    task: [
-      "Recommend whether FWS should delist the population, retain federal protection, or conclude that additional information is needed.",
-      "Identify your strongest scientific evidence.",
-      "Identify the strongest argument against your recommendation.",
-      "Identify one politically important concern that should not itself determine the ESA finding."
-    ]
-  },
-
-
   state: {
   kicker: "State agency case file",
-  title: "State Wildlife Agency",
+  title: "State Wildlife Agencies",
 
   sharedPacket:
     "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
 
   role:
-    "You work for a western state wildlife agency responsible for managing wolves alongside other wildlife, livestock interests, hunters, landowners, and local communities. If federal ESA protections are removed, your agency will assume greater responsibility for monitoring wolf populations and setting management rules. Your goal is to maintain a viable wolf population while retaining enough flexibility to respond to conflicts and meet state wildlife-management objectives.",
+    "You represent a coalition of western state wildlife agencies. These agencies are responsible for conserving wolves, monitoring populations, managing conflicts, and balancing wolves with other wildlife-management objectives. However, wolves are not in the same biological or legal position in every state. Some states already manage large, established populations, while others are overseeing the early stages of recolonization. Your coalition must determine whether it can support one federal delisting decision across these different circumstances.",
+
+  sourceIntro:
+    "Review the following state documents. They reflect different wolf populations, management responsibilities, and positions on federal delisting. They do not necessarily lead to the same conclusion.",
+
+  primarySources: [
+    {
+      title: "Idaho Wolf Population Management Plan, 2008–2012",
+      organization: "Idaho Department of Fish and Game",
+      year: "2008",
+      pages: "Read PDF pages 5–7 and 23–25",
+      url:
+        "https://idfg.idaho.gov/sites/default/files/old-web/docs/wolves/plan08.pdf",
+      description:
+        "A state plan describing agency responsibilities, population objectives, management thresholds, and available responses after federal delisting.",
+      required: true
+    },
+    {
+      title: "Letter Regarding the Proposed Gray Wolf Delisting",
+      organization: "California Fish and Game Commission",
+      year: "2019",
+      pages: "Read the entire letter",
+      url:
+        "https://faculty.nelson.wisc.edu/treves/archive_BAS/LTR_FGC_Gray%20Wolf%20Delisting_USFWS_071519_Final.pdf",
+      description:
+        "A formal state response to the 2019 proposal to remove federal protections for gray wolves across the lower 48 states.",
+      required: true
+    },
+    {
+      title: "Wolf Conservation and Management Plan",
+      organization: "Washington Department of Fish and Wildlife",
+      year: "2011",
+      pages: "Optional: read the Executive Summary",
+      url:
+        "https://wdfw.wa.gov/publications/00001",
+      description:
+        "A state recovery plan addressing population distribution, state and federal authority, livestock conflict, ungulate management, public attitudes, and long-term monitoring.",
+      required: false
+    }
+  ],
 
   considerations: [
-    "Are wolf populations within your state large and stable enough to be managed without federal ESA protection?",
-    "Can your agency maintain wolves above recovery thresholds while still allowing management actions such as hunting, trapping, or lethal removal of conflict animals?",
-    "How much flexibility should states have to reduce wolf numbers in areas with livestock conflict or concerns about impacts on wild ungulates?",
-    "What monitoring and population safeguards should remain in place after delisting?",
-    "How should your state coordinate with neighboring states, Tribes, and federal land managers when wolves regularly cross jurisdictional boundaries?"
+    "What responsibilities and costs would transfer to state agencies if federal protections were removed?",
+    "Are the population thresholds and management safeguards described by Idaho sufficient to maintain a viable and connected wolf population?",
+    "Why might an approach that is appropriate for an established population be inappropriate for a newly recolonizing population?",
+    "Should differences in population size, distribution, state law, and management capacity affect a nationwide federal determination?",
+    "What role should hunting, lethal control, and other population-management tools have after delisting?"
   ],
 
   pressures: [
-    "Ranchers and some local communities may demand faster or more aggressive responses to livestock depredation.",
-    "Hunters and elected officials may pressure the agency to reduce wolf numbers where wolves are perceived to affect elk, deer, or other game populations.",
-    "Conservation groups may challenge state rules if they believe harvest or control measures threaten long-term population viability or connectivity.",
-    "State officials may argue that continued federal protection limits the state's ability to manage a species that has already exceeded federal recovery goals."
+    "State agencies may gain management flexibility after delisting, but they would also assume additional monitoring, enforcement, conflict-response, and funding responsibilities.",
+    "State wildlife professionals must operate within laws and policies established by governors, legislatures, and wildlife commissions while also responding to scientific information and public input.",
+    "A decline in abundance, distribution, or connectivity could trigger additional protections or a future federal status review.",
+    "A position that emphasizes state authority must also explain how states will maintain viable populations across jurisdictional boundaries."
   ],
 
   task: [
-    "Decide whether your agency supports or opposes removing federal ESA protections.",
-    "Identify the strongest biological evidence supporting your position.",
-    "Describe the management safeguards your state should maintain after delisting.",
-    "Identify one conflict where additional state management flexibility would be useful.",
-    "Identify one concern raised by another stakeholder that your agency should take seriously."
+    "Review the shared FWS packet and the state documents.",
+    "Decide whether your coalition supports, opposes, or conditionally supports the proposed federal delisting.",
+    "Use at least two specific passages, figures, tables, or management provisions from the state documents in your argument.",
+    "Explain whether one federal determination is appropriate for states with populations at different stages of recovery.",
+    "Identify the population safeguards, monitoring commitments, and coordination mechanisms that would be necessary after delisting.",
+    "Identify the strongest argument against your coalition’s position and explain how you would respond to it."
   ]
 },
 
 
-  conservation: {
+ conservation: {
   kicker: "Conservation organization case file",
   title: "Conservation Organization",
 
@@ -1691,62 +1697,183 @@ const stakeholderFiles = {
     "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
 
   role:
-    "You represent a conservation organization working to ensure that gray wolf recovery is durable over the long term. You recognize that wolf abundance has increased dramatically, but you are concerned that population numbers alone may not capture genetic health, connectivity, geographic recovery, or the effects of future state management. Your role is to evaluate whether removing federal protections could place that recovery at risk.",
+    "You represent a coalition of conservation organizations commenting on the proposed removal of federal protections for gray wolves. Your organization supports durable wolf recovery and is concerned that FWS may be drawing conclusions that are broader or more certain than the underlying science supports. Your responsibility is to identify consequential uncertainties, distinguish scientific criticism from advocacy, and make the strongest defensible recommendation from the administrative record.",
+
+  sourceIntro:
+  "Review the following sources alongside the shared FWS packet. The independent peer review evaluates the scientific logic and information underlying the proposed rule. The coalition comment shows how conservation organizations used scientific, legal, and institutional arguments to advocate for an outcome. An optional primary research paper provides a closer look at ancestry, admixture, and recolonization in Pacific Northwest wolves.",
+
+  primarySources: [
+    {
+      title:
+        "Independent Peer Review of the 2019 Proposed Delisting Rule",
+      author:
+        "Daniel R. MacNulty",
+      organization:
+        "U.S. Fish and Wildlife Service",
+      date:
+        "May 2019",
+      pages:
+        "Adobe PDF pages 230–238",
+      url:
+        "https://www.fws.gov/sites/default/files/documents/final-gray-wolf-peer-review-summary-report-2019-05-31.pdf",
+      prompt:
+        "Focus on MacNulty’s analysis of the combined gray wolf entity, western and eastern population structure, the meaning of current range, and human-caused mortality."
+    },
+    {
+      title:
+        "Public Comment on the Proposed Gray Wolf Delisting Rule",
+      author:
+        "Western Environmental Law Center et al.",
+      organization:
+        "Submitted on behalf of eleven western conservation organizations",
+      date:
+        "July 15, 2019",
+      pages:
+        "Pages 1–3 and 9–10",
+      url:
+        "https://rewilding.org/wp-content/uploads/2019/07/2019.07.15_WELC_FWSHQES20180097-copy.pdf",
+      prompt:
+        "Identify how the coalition translates information about abundance, range, population structure, and recovery into scientific, legal, and advocacy arguments."
+    },
+    {
+  title:
+    "Natural Re-colonization and Admixture of Wolves in the U.S. Pacific Northwest",
+  author:
+    "Hendricks et al.",
+  organization:
+    "Heredity 122: 133–149",
+  date:
+    "2019",
+  pages:
+    "Optional: Abstract, Figure 1, Results figures, and Discussion",
+  url:
+    "https://www.nature.com/articles/s41437-018-0094-x",
+  optional:
+    true,
+  prompt:
+    "Consider what the ancestry and admixture of Pacific Northwest wolves reveal about connectivity, genetic diversity, and whether these recolonizing wolves are biologically interchangeable with wolves in the Northern Rocky Mountains."
+}
+  ],
 
   considerations: [
-    "Do current wolf numbers demonstrate long-term recovery, or mainly short-term demographic security?",
-    "Are wolf populations sufficiently connected to maintain genetic diversity and allow dispersal among recovery areas?",
-    "How much should the continued absence of wolves from large portions of their historical and potentially suitable range matter when evaluating recovery?",
-    "Could increased hunting, trapping, lethal control, or other state management actions substantially reduce population size or connectivity after delisting?",
-    "Are existing state management plans and regulatory safeguards strong enough to prevent future declines without federal ESA protections?"
+    "Which part of FWS’s recovery conclusion is most vulnerable to scientific challenge?",
+    "What does the range map in the shared packet establish, and what remains uncertain about how FWS defined current range?",
+    "Does FWS adequately distinguish population abundance from geographic, genetic, and functional recovery?",
+    "How could mortality in core populations affect dispersal, connectivity, and recolonization elsewhere?",
+    "Which uncertainties identified by MacNulty could materially change the delisting decision?",
+    "Which claims in the coalition comment are supported by scientific information, and which depend primarily on legal interpretation, organizational values, or advocacy?",
+    "What does the ancestry of recolonizing Pacific Northwest wolves suggest about connectivity, genetic representation, and the value of peripheral populations?"
   ],
 
   pressures: [
-    "Conservation organizations face pressure from members and supporters who may favor broad wolf restoration, even though the ESA decision must ultimately be tied to statutory criteria and scientific evidence.",
-    "Litigation is one tool available to conservation organizations when they believe FWS has failed to use the best available science or adequately evaluate threats."
+    "Members and supporters may expect the organization to favor continued federal protection and broader restoration of wolves.",
+    "The organization must make arguments that can withstand scientific scrutiny and possible judicial review, not simply arguments that advance its preferred outcome.",
+    "Strong rhetorical claims may attract public attention but can weaken the organization’s credibility if they overstate what the underlying sources establish.",
+    "Litigation is available when the organization believes FWS has ignored important information, used unsupported assumptions, or failed to evaluate relevant threats."
   ],
 
   task: [
-    "Decide whether you support or oppose removing federal ESA protections.",
-    "Identify the strongest scientific evidence supporting your position.",
-    "Identify the greatest long-term risk you believe could be underestimated by a population-count-based recovery assessment.",
-    "Explain what additional safeguards or recovery evidence would make you comfortable with delisting.",
-    "Identify one argument commonly made in favor of wolf protection that is important socially or ecologically but may not, by itself, determine ESA listing status."
+    "Decide whether your organization supports, opposes, or seeks modification of the proposed delisting.",
+    "Identify two findings in the record that most strongly support your position.",
+    "Identify one FWS conclusion that depends on a disputed or insufficiently supported assumption.",
+    "Explain why that uncertainty is biologically or legally consequential rather than simply an unavoidable limitation of wildlife research.",
+    "Acknowledge the strongest fact supporting delisting and explain why it does or does not change your recommendation.",
+    "Identify one argument favorable to wolf protection that FWS could not legitimately treat as determinative under the ESA."
   ]
 },
 
 
   local: {
-  kicker: "Local community case file",
-  title: "Ranching, Hunting & Local Communities",
+  kicker: "Rural community case file",
+  title: "Rural Livelihoods & Hunting Coalition",
 
   sharedPacket:
     "assets/files/western_gray_wolf_shared_stakeholder_packet.pdf",
 
   role:
-    "You represent people who live and work in areas occupied by wolves, including livestock producers, hunters, rural residents, and local community members. You may support maintaining wolves on the landscape while also believing that the costs and management consequences of recovery fall disproportionately on people living closest to them. Your priority is a management system that protects viable wolf populations while allowing timely responses to local conflicts.",
+    "You represent a coalition of livestock producers, hunters, outfitters, private landowners, and rural residents who live and work in areas occupied by wolves. Coalition members do not necessarily agree on every issue, but they share an interest in maintaining viable wildlife populations while ensuring that managers can respond effectively to livestock depredation, effects on game populations, and other localized conflicts. Your responsibility is to distinguish documented impacts from perceived concerns and determine which arguments are relevant to the federal delisting decision.",
+
+  sourceIntro:
+    "Review the following sources alongside the shared FWS packet. The research article examines where wolf–livestock conflicts occur and whether targeted removal or public harvest reduces future conflicts. The two public comments show how livestock and hunting organizations used biological, legal, economic, and governance arguments to support delisting.",
+
+  primarySources: [
+    {
+      title:
+        "Wolf–Livestock Conflict and the Effects of Wolf Management",
+      author:
+        "DeCesare et al.",
+      organization:
+        "The Journal of Wildlife Management 82: 711–722",
+      date:
+        "2018",
+      pages:
+        "Abstract, Figures 1–3, and discussion on pages 719–721",
+      url:
+        "https://fwp.mt.gov/binaries/content/assets/fwp/conservation/wildlife-reports/wolf/2018_decesare_etal_wolflivestockconflict_jwm.pdf",
+      prompt:
+        "Examine where confirmed depredations occurred, whether conflicts were broadly distributed or geographically concentrated, and how effectively targeted removal and public harvest reduced subsequent conflicts."
+    },
+    {
+      title:
+        "Public Comment on the Proposed Gray Wolf Delisting Rule",
+      author:
+        "Public Lands Council, National Cattlemen’s Beef Association, American Sheep Industry Association et al.",
+      organization:
+        "Submitted by national and state livestock associations",
+      date:
+        "July 15, 2019",
+      pages:
+        "All seven pages",
+      url:
+        "https://www.sheepusa.org/wp-content/uploads/2019/08/Comments_WolfDelisting_2018_07_15.pdf",
+      prompt:
+        "Identify which claims concern wolf biological status, which concern state management authority, and which reflect the practical interests of livestock producers."
+    },
+    {
+      title:
+        "Comment on the 2019 Proposed Gray Wolf Delisting Rule",
+      author:
+        "Rocky Mountain Elk Foundation",
+      organization:
+        "Submitted to the U.S. Fish and Wildlife Service",
+      date:
+        "May 10, 2019",
+      pages:
+        "All four pages",
+      url:
+        "https://downloads.regulations.gov/FWS-HQ-ES-2018-0097-60622/attachment_1.pdf",
+      prompt:
+        "Consider whether the organization supports delisting primarily with information about wolf recovery, concerns about ungulates and hunting, a preference for state management, or some combination of these arguments."
+    }
+  ],
 
   considerations: [
-    "How should livestock losses and other costs of living with wolves be weighed when deciding who should manage recovered populations?",
-    "Are compensation programs and non-lethal conflict-prevention tools sufficient, accessible, and practical for livestock producers?",
-    "Should managers have greater flexibility to remove individual wolves or packs that repeatedly kill livestock?",
-    "How should concerns about wolves, elk, deer, and hunting opportunities factor into state wildlife management after delisting?",
-    "If wolf populations remain well above recovery thresholds, should local and state managers have greater authority to determine acceptable population levels?"
+    "Which local costs and conflicts are documented in the sources, and which are asserted without supporting information?",
+    "Are wolf–livestock conflicts broadly distributed or concentrated among particular producers and locations?",
+    "Do compensation payments fully address the effects of a depredation, including unverified losses, added labor, prevention costs, and disruption to livestock operations?",
+    "Does the research support general public harvest, targeted removal of conflict wolves, or a combination of management approaches?",
+    "What information would be needed to evaluate claims that wolves are affecting elk, deer, hunting opportunities, or outfitting businesses?",
+    "Which arguments demonstrate something about wolf recovery status, and which instead support greater local or state management flexibility?",
+    "If wolves remain biologically recovered, what management authority should states and local communities have after delisting?"
   ],
 
   pressures: [
-    "Livestock producers may experience direct losses from depredation as well as added costs for monitoring, fencing, range riders, carcass removal, and other prevention measures.",
-    "Compensation programs can offset confirmed livestock losses, but producers may view them as incomplete if they do not cover indirect losses, added labor, or animals that cannot be verified as wolf kills.",
-    "Hunters and outfitters may be concerned about effects of wolf predation on locally important elk or deer populations, even when wolves are not the only factor affecting those herds.",
-    "Many people outside wolf range strongly support wolf conservation, which can create frustration when communities living with wolves perceive that they bear more of the costs while having less influence over management."
+    "The costs of living with wolves are unevenly distributed, with some producers and communities experiencing repeated conflicts while others experience few or none.",
+    "Coalition members may expect the group to support delisting even when their preferred management actions are not directly relevant to the ESA listing criteria.",
+    "Livestock producers may view compensation as incomplete when losses cannot be verified or when programs exclude added labor, prevention costs, reduced weight gain, or other indirect effects.",
+    "Hunters and outfitters may be concerned about locally important elk or deer herds, although wolves may be only one of several factors affecting ungulate populations.",
+    "Broad public support for wolves can create frustration when rural communities believe that people living outside wolf range influence policy without sharing its costs.",
+    "The coalition must propose management actions that address documented conflicts without undermining the long-term viability of wolf populations."
   ],
 
   task: [
-    "Decide whether you support or oppose removing federal ESA protections.",
-    "Identify the strongest scientific evidence supporting your position.",
-    "Identify the most important economic or social concern for people living with wolves.",
-    "Describe one management tool or safeguard you would want in place after delisting.",
-    "Identify one concern from conservation advocates that your group believes should still be taken seriously."
+    "Decide whether the coalition supports, opposes, or seeks modification of the proposed delisting.",
+    "Identify two documented findings that most strongly support your recommendation.",
+    "Identify the most important economic, social, or management concern for people living with wolves.",
+    "Describe one specific management authority or tool the coalition wants and explain how it would address a documented problem.",
+    "Explain which parts of your argument bear directly on wolf status under the ESA and which instead concern management after delisting.",
+    "Acknowledge the strongest concern raised by conservation organizations and describe a safeguard that could address it.",
+    "Identify one genuine local concern that FWS could not legitimately use as the determining basis for delisting."
   ]
 }
 
